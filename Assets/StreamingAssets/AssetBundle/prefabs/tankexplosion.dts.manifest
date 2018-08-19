@@ -1,0 +1,29 @@
+ManifestFileVersion: 0
+CRC: 4218381251
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 1c560d7c6f2ed2859e1be3dbc6e76814
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1b241dd5ccf3c663ad3a6546ff6acc0f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Prefabs/TankExplosion.prefab
+Dependencies:
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/tankgrey.dts

@@ -1,0 +1,55 @@
+ManifestFileVersion: 0
+CRC: 3945554201
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4f35bf8efe36bd6474ca29a9e09c2720
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8ae1adffaa52dc8e78dc45e8b3573517
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 137
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Prefabs/CompleteLevelArt.prefab
+Dependencies:
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/brown.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/buildingglass.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/buildinggrey.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/buildingmetal.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/buildingstone.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/buildingwhite.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/green.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/oildrums.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/tankgrey.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/yellowdark.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/yellowlight.dts

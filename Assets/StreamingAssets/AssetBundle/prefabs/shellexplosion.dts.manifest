@@ -1,0 +1,31 @@
+ManifestFileVersion: 0
+CRC: 989045516
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 16d641b87e8fbd05a13665c2792a2417
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 93d0143e89325f6bec357c5efd661dd3
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Prefabs/ShellExplosion.prefab
+Dependencies:
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/explosion.dts

@@ -1,0 +1,21 @@
+ManifestFileVersion: 0
+CRC: 748325605
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4e7412371d9cf1a2f4ddcf9b5b2ac188
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0520077050483de6babb9bd310d40764
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Materials/TankColour.mat
+Dependencies:
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/textures/texture_tank.dts

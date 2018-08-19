@@ -1,0 +1,5 @@
+﻿1,P92,手枪,UI/gun/gun_01
+2,UZI,散弹枪,UI/gun/gun_02
+3,AK,步枪,UI/gun/gun_03
+4,98K,火箭,UI/gun/gun_04
+5,AUG,加特林,UI/gun/gun_05

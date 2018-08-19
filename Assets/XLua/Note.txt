@@ -1,0 +1,14 @@
+1、初学xlua
+
+Table Note 
+table 是 Lua 中唯一的数据结构，其他语言所提供的数据结构，如： arrays、 records、
+lists、 queues、 sets 等， Lua 都是通过 table 来实现，并且在 lua 中 table 很好的实现了这
+些数据结构
+
+Lua 元表(Metatable)
+在 Lua table 中我们可以访问对应的key来得到value值，但是却无法对两个 table 进行操作。
+
+因此 Lua 提供了元表(Metatable)，允许我们改变table的行为，每个行为关联了对应的元方法。
+什么是元表：
+元表像是一个“操作指南”，里面包含了一系列操作的解决方案，例如__index方法就是定义了这个表在索引失败的情况下该怎么办
+

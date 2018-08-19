@@ -1,0 +1,56 @@
+ManifestFileVersion: 0
+CRC: 1405169259
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 15c22083b041c86db57f5470d51e53fe
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b3f602f9368505da71785ce19f633fe9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+- Class: 108
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: af9894b7bced3a04c870ade3c621f94e, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 136
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 241
+  Script: {instanceID: 0}
+- Class: 243
+  Script: {instanceID: 0}
+- Class: 245
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Prefabs/CompleteShell.prefab
+Dependencies:
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/explosion.dts
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/gold.dts

@@ -1,0 +1,18 @@
+ManifestFileVersion: 0
+CRC: 332914549
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d0cf5964b0ce2eeeb249c01b2ab0533d
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 02bb1a4f827934bc9f9224f61c0f3e4c
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Materials/BuildingGlass.mat
+Dependencies: []

@@ -1,0 +1,27 @@
+ManifestFileVersion: 0
+CRC: 1429989519
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d39d7aa27a719cbf146d2e801a78fd78
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 01d6e883bff78e3a597d874b493f6afc
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Prefabs/CompleteDustTrail.prefab
+Dependencies:
+- F:/Unity5Project/JoeyGame/Assets/StreamingAssets/AssetBundle/materials/dust.dts

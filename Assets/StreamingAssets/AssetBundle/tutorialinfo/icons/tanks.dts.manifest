@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 1512544206
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 89b54c60dfb09bd0c55108693624040a
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c1642440719609290a7e09a50a7286f4
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/TutorialInfo/Icons/Tanks.png
+Dependencies: []

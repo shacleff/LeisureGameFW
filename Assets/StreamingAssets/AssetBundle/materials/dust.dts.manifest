@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 226474727
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 7bb6864929933730e1029dac43e0b796
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 0520077050483de6babb9bd310d40764
+HashAppended: 0
+ClassTypes:
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/_Completed-Assets/Materials/Dust.mat
+Dependencies: []
