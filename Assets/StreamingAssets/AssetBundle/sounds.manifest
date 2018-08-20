@@ -1,0 +1,30 @@
+ManifestFileVersion: 0
+CRC: 2180679803
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d75687dd691382e7614b7268aab0f4ad
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 3f7d0c5e0986ec71841622bcb2f9be1c
+HashAppended: 0
+ClassTypes:
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/Resources/Sounds/StartGameReload.mp3
+- Assets/Resources/Sounds/SettleAccounts.mp3
+- Assets/Resources/Sounds/98K01.mp3
+- Assets/Resources/Sounds/AK.mp3
+- Assets/Resources/Sounds/GetGift.mp3
+- Assets/Resources/Sounds/AUG.mp3
+- Assets/Resources/Sounds/MainButton.mp3
+- Assets/Resources/Sounds/UZI.mp3
+- Assets/Resources/Sounds/P92.mp3
+- Assets/Resources/Sounds/EatCoin.mp3
+- Assets/Resources/Sounds/ShopGetCoin.mp3
+- Assets/Resources/Sounds/SubButton.mp3
+- Assets/Resources/Sounds/Buy.mp3
+- Assets/Resources/Sounds/EatBullet.mp3
+- Assets/Resources/Sounds/EatAccelerator.mp3
+Dependencies: []
