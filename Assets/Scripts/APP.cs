@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace JoeyGame
+namespace JoeyGame.Tank
 {
     public class APP : MonoSingleton<APP>
     {

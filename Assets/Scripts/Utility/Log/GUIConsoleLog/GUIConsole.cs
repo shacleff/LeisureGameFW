@@ -6,6 +6,7 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using DesignPattern;
+using JoeyGame.Tank;
 
 namespace JoeyGame
 {
