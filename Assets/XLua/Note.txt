@@ -12,3 +12,6 @@ Lua 元表(Metatable)
 什么是元表：
 元表像是一个“操作指南”，里面包含了一系列操作的解决方案，例如__index方法就是定义了这个表在索引失败的情况下该怎么办
 
+加载lua的方法：
+建议的加载Lua脚本方式是：整个程序就一个DoString("require 'main'")，然后在main.lua加载其它脚本（类似lua脚本的命令行执行：lua main.lua）。
+

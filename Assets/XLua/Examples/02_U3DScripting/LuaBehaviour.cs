@@ -21,7 +21,7 @@ public class Injection
 
 [LuaCallCSharp]
 public class LuaBehaviour : MonoBehaviour {
-    public TextAsset luaScript;
+    public TextAsset luaScript; 
     public Injection[] injections;
 
     internal static LuaEnv luaEnv = new LuaEnv(); //all lua behaviour shared one luaenv only!
