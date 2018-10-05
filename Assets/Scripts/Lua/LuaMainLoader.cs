@@ -23,12 +23,11 @@ public class InJectionBtn
 [LuaCallCSharp]
 public class LuaMainLoader : MonoBehaviour
 {
-    public TextAsset ScriptTxt;
-
+    public string luaFileName;
     private LuaEnv mLuaEnv = new LuaEnv();
     private LuaTable scriptLua=null;
-
     public Action luaStart;
+    public Action luaEnable;
     public Action luaUpdate;
     public Action luaDestroy;
 
@@ -40,7 +39,7 @@ public class LuaMainLoader : MonoBehaviour
 
     void Awake()
     {
-       // GetComponentInChildren<Text>();
+        string luaTxt = Loader(luaFileName);
         //创建这个脚本的lua table
         scriptLua = mLuaEnv.NewTable();
         //创建这个脚本的元表
@@ -60,15 +59,16 @@ public class LuaMainLoader : MonoBehaviour
         {
             scriptLua.Set(btn.key, btn.value);
         }
-
-        Loader("MainLua");
+        
+        //Loader("MainLua");
         //txt文本一定是要UTF8格式
-        mLuaEnv.DoString(ScriptTxt.text, "LuaMainLoader", scriptLua);
+        mLuaEnv.DoString(luaTxt, "LuaMainLoader", scriptLua);
         Action luaAwake = scriptLua.Get<Action>("awake");
         scriptLua.Get("start", out luaStart);
         scriptLua.Get("update", out luaUpdate);
         scriptLua.Get("ondestroy", out luaDestroy);
-
+        scriptLua.Get("on_enable", out luaEnable);
+       
         if (luaAwake != null)
             luaAwake();
         
@@ -76,8 +76,11 @@ public class LuaMainLoader : MonoBehaviour
 
     private string Loader(string _filePath)
     {
-        _filePath = Application.streamingAssetsPath + "/" + _filePath + ".lua";
-        return System.IO.File.ReadAllText(_filePath);
+        //_filePath = Application.streamingAssetsPath + "/LuaFile/" + _filePath + ".lua";
+        _filePath = Application.dataPath + "/Scripts/Lua/"+ _filePath + ".lua.txt";
+        string s = System.IO.File.ReadAllText(_filePath);
+        return s;
+       // return System.Text.Encoding.UTF8.GetBytes(s);
     }
 
     void Start ()
@@ -87,9 +90,14 @@ public class LuaMainLoader : MonoBehaviour
         if (luaStart != null)
             luaStart();
 	}
-	
 
-	void Update ()
+    private void OnEnable()
+    {
+        if (luaEnable != null)
+            luaEnable();
+    }
+
+    void Update ()
     {
         if (luaUpdate != null)
             luaUpdate();

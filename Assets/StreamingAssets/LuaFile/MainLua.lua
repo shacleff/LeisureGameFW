@@ -6,10 +6,13 @@ local player=require 'Player'
 local camera_lua=require 'camera'
 local res_lua=require 'res'
 local uiImage_lua=require 'uiimage'
+local GameObject = CS.UnityEngine.GameObject
 
 function awake()
 	print("call the awake by monobehaviour")
 	player.awake()
+
+
 end
 
 --call by C# MonoBehaviour

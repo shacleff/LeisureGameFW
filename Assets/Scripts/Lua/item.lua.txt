@@ -1,0 +1,6 @@
+print('this is item class')
+
+function start( ... )
+	-- body
+	print( 'my name is '..self.gameObject.name )
+end
