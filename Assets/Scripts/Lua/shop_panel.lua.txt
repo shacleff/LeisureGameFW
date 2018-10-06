@@ -1,6 +1,7 @@
 --this is shop panel
 --create by joehuang 
 
+main=require 'MainLua'
 
 num=5
 local GameObject=CS.UnityEngine.GameObject
@@ -23,11 +24,14 @@ function start(  )
 	end
 
 	back_btn:GetComponent("Button").onClick:AddListener(close)
+	main.showlog()
 end
 
 function update()
 	-- body
 end
+
+
 
 function close()
 	-- body
@@ -40,3 +44,4 @@ function  destroy()
 	-- body
 end
 
+return M

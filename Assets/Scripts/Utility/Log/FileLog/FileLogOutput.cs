@@ -22,7 +22,7 @@ namespace JoeyGame
 
         public FileLogOutput()
         {
-            APP.GetInstance().onApplicationQuit += Close;
+            App.GetInstance().onApplicationQuit += Close;
             this.mWritingLogQueue = new Queue<LogData>();
             this.mWaitingLogQueue = new Queue<LogData>();
             this.mLogLock = new object();

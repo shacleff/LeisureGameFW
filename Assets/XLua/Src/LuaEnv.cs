@@ -186,7 +186,7 @@ namespace XLua
             initers.Add(initer);
         }
         /// <summary>
-        /// ´ú±íluaÈ«¾Ö»·¾³µÄLuaTable
+        /// ï¿½ï¿½ï¿½ï¿½luaÈ«ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½LuaTable
         /// </summary>
         public LuaTable Global
         {
@@ -237,13 +237,13 @@ namespace XLua
         {
             return LoadString<LuaFunction>(chunk, chunkName, env);
         }
-        /// <summary>
-        /// Ö´ĞĞÒ»¸ö´úÂë¿é
+         /// <summary>
+        /// æ‰§è¡Œä¸€ä¸ªä»£ç å—
         /// </summary>
-        /// <param name="chunk">´úÂëÎÄ×Ö´®</param>
-        /// <param name="chunkName">·¢ËÍerrorÊ±µÄdebugÏÔÊ¾ĞÅÏ¢ÖĞÊ¹ÓÃ£¬Ö¸Ã÷Ä³Ä³´úÂë¿éµÄÄ³ĞĞ´íÎó</param>
-        /// <param name="env">Õâ¸ö´úÂë¿éµÄ»·¾³±äÁ¿</param>
-        /// <returns>return 1,"hello"£¬DoString·µ»Ø½«°üº¬Á½¸öobjectµÄÊı×é£¬Ò»¸öÊÇdoubleÀàĞÍµÄ1£¬Ò»¸öÊÇstringÀàĞÍµÄ"hello"</returns>
+        /// <param name="chunk">ä»£ç æ–‡å­—ä¸²</param>
+        /// <param name="chunkName">å‘é€erroræ—¶çš„debugæ˜¾ç¤ºä¿¡æ¯ä¸­ä½¿ç”¨ï¼ŒæŒ‡æ˜æŸæŸä»£ç å—çš„æŸè¡Œé”™è¯¯</param>
+        /// <param name="env">è¿™ä¸ªä»£ç å—çš„ç¯å¢ƒå˜é‡</param>
+        /// <returns>return 1,"hello"ï¼ŒDoStringè¿”å›å°†åŒ…å«ä¸¤ä¸ªobjectçš„æ•°ç»„ï¼Œä¸€ä¸ªæ˜¯doubleç±»å‹çš„1ï¼Œä¸€ä¸ªæ˜¯stringç±»å‹çš„"hello"</returns>
         public object[] DoString(byte[] chunk, string chunkName = "chunk", LuaTable env = null)
         {
 #if THREAD_SAFE || HOTFIX_ENABLE
@@ -277,13 +277,13 @@ namespace XLua
             }
 #endif
         }
-        /// <summary>
-        /// Ö´ĞĞÒ»¸ö´úÂë¿é
+         /// <summary>
+        /// æ‰§è¡Œä¸€ä¸ªä»£ç å—
         /// </summary>
-        /// <param name="chunk">´úÂëÎÄ×Ö´®</param>
-        /// <param name="chunkName">·¢ËÍerrorÊ±µÄdebugÏÔÊ¾ĞÅÏ¢ÖĞÊ¹ÓÃ£¬Ö¸Ã÷Ä³Ä³´úÂë¿éµÄÄ³ĞĞ´íÎó</param>
-        /// <param name="env">Õâ¸ö´úÂë¿éµÄ»·¾³±äÁ¿</param>
-        /// <returns>return 1,"hello"£¬DoString·µ»Ø½«°üº¬Á½¸öobjectµÄÊı×é£¬Ò»¸öÊÇdoubleÀàĞÍµÄ1£¬Ò»¸öÊÇstringÀàĞÍµÄ"hello"</returns>
+        /// <param name="chunk">ä»£ç æ–‡å­—ä¸²</param>
+        /// <param name="chunkName">å‘é€erroræ—¶çš„debugæ˜¾ç¤ºä¿¡æ¯ä¸­ä½¿ç”¨ï¼ŒæŒ‡æ˜æŸæŸä»£ç å—çš„æŸè¡Œé”™è¯¯</param>
+        /// <param name="env">è¿™ä¸ªä»£ç å—çš„ç¯å¢ƒå˜é‡</param>
+        /// <returns>return 1,"hello"ï¼ŒDoStringè¿”å›å°†åŒ…å«ä¸¤ä¸ªobjectçš„æ•°ç»„ï¼Œä¸€ä¸ªæ˜¯doubleç±»å‹çš„1ï¼Œä¸€ä¸ªæ˜¯stringç±»å‹çš„"hello"</returns>
         public object[] DoString(string chunk, string chunkName = "chunk", LuaTable env = null)
         {
             byte[] bytes = System.Text.Encoding.UTF8.GetBytes(chunk);
@@ -359,7 +359,7 @@ namespace XLua
 #endif
         }
 
-        //¼æÈİAPI
+        //ï¿½ï¿½ï¿½ï¿½API
         public void GC()
         {
             Tick();
@@ -573,8 +573,8 @@ namespace XLua
 
         internal List<CustomLoader> customLoaders = new List<CustomLoader>();
 
-        //loader : CustomLoader£¬ filepath²ÎÊı£º£¨refÀàĞÍ£©ÊäÈëÊÇrequireµÄ²ÎÊı£¬Èç¹ûĞèÒªÖ§³Öµ÷ÊÔ£¬ĞèÒªÊä³öÕæÊµÂ·¾¶¡£
-        //                        ·µ»ØÖµ£ºÈç¹û·µ»Ønull£¬´ú±í¼ÓÔØ¸ÃÔ´ÏÂÎŞºÏÊÊµÄÎÄ¼ş£¬·ñÔò·µ»ØUTF8±àÂëµÄbyte[]
+        //loader : CustomLoaderï¿½ï¿½ filepathï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½refï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½requireï¿½Ä²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÒªÖ§ï¿½Öµï¿½ï¿½Ô£ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ÊµÂ·ï¿½ï¿½ï¿½ï¿½
+        //                        ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½nullï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¸ï¿½Ô´ï¿½ï¿½ï¿½Şºï¿½ï¿½Êµï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò·µ»ï¿½UTF8ï¿½ï¿½ï¿½ï¿½ï¿½byte[]
         public void AddLoader(CustomLoader loader)
         {
             customLoaders.Add(loader);

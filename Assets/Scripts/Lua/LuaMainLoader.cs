@@ -50,30 +50,35 @@ public class LuaMainLoader : MonoBehaviour
         scriptLua.SetMetaTable(meta);
         meta.Dispose();
         //创建一个键值，用于self指向自己
-        scriptLua.Set("self", this);
+        
+
+        //Loader("MainLua");
+        //txt文本一定是要UTF8格式
+        //mLuaEnv.DoString(luaTxt, "LuaMainLoader", scriptLua);
+        mLuaEnv.AddLoader(LoadByte);
+        mLuaEnv.DoString("require '"+luaFileName+"'");
+        Action luaAwake = mLuaEnv.Global.Get<Action>("awake");
+
+        mLuaEnv.Global.Set("self", this);
         foreach (var obj in inJection)
         {
-            scriptLua.Set(obj.key, obj.value);
+            mLuaEnv.Global.Set(obj.key, obj.value);
         }
         foreach (var btn in injectionBtn)
         {
-            scriptLua.Set(btn.key, btn.value);
+            mLuaEnv.Global.Set(btn.key, btn.value);
         }
-        
-        //Loader("MainLua");
-        //txt文本一定是要UTF8格式
-        mLuaEnv.DoString(luaTxt, "LuaMainLoader", scriptLua);
-        Action luaAwake = scriptLua.Get<Action>("awake");
-        scriptLua.Get("start", out luaStart);
-        scriptLua.Get("update", out luaUpdate);
-        scriptLua.Get("ondestroy", out luaDestroy);
-        scriptLua.Get("on_enable", out luaEnable);
+
+        mLuaEnv.Global.Get("start", out luaStart);
+        mLuaEnv.Global.Get("update", out luaUpdate);
+        mLuaEnv.Global.Get("ondestroy", out luaDestroy);
+        mLuaEnv.Global.Get("on_enable", out luaEnable);
        
         if (luaAwake != null)
             luaAwake();
         
     }
-
+    
     private string Loader(string _filePath)
     {
         //_filePath = Application.streamingAssetsPath + "/LuaFile/" + _filePath + ".lua";
@@ -81,6 +86,13 @@ public class LuaMainLoader : MonoBehaviour
         string s = System.IO.File.ReadAllText(_filePath);
         return s;
        // return System.Text.Encoding.UTF8.GetBytes(s);
+    }
+
+    private byte[] LoadByte(ref string _filePath)
+    {
+        _filePath = Application.dataPath + "/Scripts/Lua/" + _filePath + ".lua.txt";
+        string s = System.IO.File.ReadAllText(_filePath);
+        return System.Text.Encoding.UTF8.GetBytes(s);
     }
 
     void Start ()

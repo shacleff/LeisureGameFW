@@ -66,8 +66,8 @@ namespace JoeyGame
             this.fpsCounter = new FPSCounter(this);
             this.memoryDetector = new MemoryDetector(this);
             //        this.showGUI = App.Instance().showLogOnGUI;
-            APP.GetInstance().onUpdate += Update;
-            APP.GetInstance().onGUI += OnGUI;
+            App.GetInstance().onUpdate += Update;
+            App.GetInstance().onGUI += OnGUI;
             Application.logMessageReceived += HandleLog;
 
         }
