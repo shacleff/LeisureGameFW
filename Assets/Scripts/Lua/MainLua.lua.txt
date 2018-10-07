@@ -13,6 +13,7 @@ num=110
 local GameObject=CS.UnityEngine.GameObject
 local Quaternion = CS.UnityEngine.Quaternion
 local Vector3 = CS.UnityEngine.Vector3
+main.shopbtn=shopbtn
 
 function awake()
 	print("call the awake by monobehaviour"..num)
@@ -50,6 +51,7 @@ end
 function main.showlog( ... )
 	-- body
 	print( 'show log' )
+	print( main.shopbtn.transform:Find("Text"):GetComponent("Text").text )
 end
 
 --call by C# MonoBehaviour
