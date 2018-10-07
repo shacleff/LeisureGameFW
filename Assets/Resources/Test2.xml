@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<transforms>
+  <rotation id="1000" name="momo">
+    <x>0</x>
+    <y>1</y>
+    <z id="1">update00000</z>
+  </rotation>
+  <rotation id="1" name="yusong">
+    <x id="1">0</x>
+    <y>1</y>
+    <z>2</z>
+  </rotation>
+</transforms>

@@ -5,8 +5,7 @@ using UnityEditor;
 using System.Collections;
 using System;
 using System.Collections.Generic;
-using DesignPattern;
-using JoeyGame.Tank;
+using Game;
 
 namespace JoeyGame
 {
@@ -46,15 +45,32 @@ namespace JoeyGame
         /// <summary>
         /// 内存监视器
         /// </summary>
-        private MemoryDetector memoryDetector = null;
+        private QMemoryDetector memoryDetector = null;
+#if UNITY_EDITOR
         private bool showGUI = true;
+#elif UNITY_ANDROID
+        private bool showGUI = true;
+#endif
+
+        public bool ShowGUI
+        {
+            set
+            {
+                showGUI = value;
+            }
+            get
+            {
+                return showGUI;
+            }
+        }
+
         List<ConsoleMessage> entries = new List<ConsoleMessage>();
         Vector2 scrollPos;
         bool scrollToBottom = true;
         bool collapse;
 
         const int margin = 20;
-        Rect windowRect = new Rect(margin + Screen.width * 0.5f, margin, Screen.width * 0.5f - (2 * margin), Screen.height - (2 * margin)-800);
+        Rect windowRect = new Rect(margin + Screen.width * 0.5f, margin, Screen.width * 0.5f - (2 * margin), Screen.height - (2 * margin)-500);
 
         GUIContent clearLabel = new GUIContent("Clear", "Clear the contents of the console.");
         GUIContent collapseLabel = new GUIContent("Collapse", "Hide repeated messages.");
@@ -64,7 +80,7 @@ namespace JoeyGame
         private GUIConsole()
         {
             this.fpsCounter = new FPSCounter(this);
-            this.memoryDetector = new MemoryDetector(this);
+            this.memoryDetector = new QMemoryDetector(this);
             //        this.showGUI = App.Instance().showLogOnGUI;
             App.GetInstance().onUpdate += Update;
             App.GetInstance().onGUI += OnGUI;
@@ -82,15 +98,18 @@ namespace JoeyGame
         {
 #if UNITY_EDITOR
             if (Input.GetKeyUp(KeyCode.F1))
-                this.showGUI = !this.showGUI;
+                this.ShowGUI = !this.ShowGUI;
+
 #elif UNITY_ANDROID
-            if (Input.GetKeyUp(KeyCode.Escape))
-                this.showGUI = !this.showGUI;
+            /*if (Input.GetKeyUp(KeyCode.Escape))
+                this.ShowGUI = !this.ShowGUI;*/
+            if (Input.touchCount == 3)
+                this.ShowGUI = !this.ShowGUI;
 #elif UNITY_IOS
-            if (!mTouching && Input.touchCount == 4)
+            if (!mTouching && Input.touchCount == 3)
             {
                 mTouching = true;
-                this.showGUI = !this.showGUI;
+                this.ShowGUI = !this.ShowGUI;
             } else if (Input.touchCount == 0){
                 mTouching = false;
             }
