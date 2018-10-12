@@ -51,7 +51,6 @@ end
 function main.showlog( ... )
 	-- body
 	print( 'show log' )
-	print( main.shopbtn.transform:Find("Text"):GetComponent("Text").text )
 end
 
 --call by C# MonoBehaviour
