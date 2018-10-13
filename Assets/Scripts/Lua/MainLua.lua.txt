@@ -24,7 +24,7 @@ end
 --call by C# MonoBehaviour
 function start()
 	print("on start")
-	logo:GetComponent("Text").text="杀死一只知更鸟"
+	logo:GetComponent("Text").text="无人生还"
 	setBtn.transform:Find("Text"):GetComponent("Text").text="设置"
 	playBtn.transform:Find("Text"):GetComponent("Text").text="开始游戏"
 	shopbtn.transform:Find("Text"):GetComponent("Text").text="商店"
