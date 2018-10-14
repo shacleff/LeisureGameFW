@@ -35,6 +35,8 @@ namespace Game.FSM
         /// 结束退出状态
         /// </summary>
         void EndExit();
+
+        void OnBeginExitEvent(StateBeginEventArgs eventArgs);
     }
 }
 

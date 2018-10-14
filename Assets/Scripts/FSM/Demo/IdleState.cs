@@ -11,8 +11,7 @@ public class IdleState : IState
 
     public void BeginEnter()
     {
-        GameObject obj = GameObject.Find("Canvas/Walk");
-        obj.GetComponent<Button>().onClick.AddListener(() => SwitchState());
+       
         Debug.Log("Idle Begin enter");
     }
 
@@ -29,6 +28,11 @@ public class IdleState : IState
     public IEnumerable Execute()
     {
         yield return new WaitForSeconds(1.0f);
+    }
+
+    public void OnBeginExitEvent(StateBeginEventArgs eventArgs)
+    {
+        OnBeginExit(this, eventArgs);
     }
 
     public void SwitchState()

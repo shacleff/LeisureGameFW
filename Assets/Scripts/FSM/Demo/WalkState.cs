@@ -12,7 +12,7 @@ public class WalkState : IState
     public void BeginEnter()
     {
         GameObject obj = GameObject.Find("Canvas/Attack");
-        obj.GetComponent<Button>().onClick.AddListener(() => SwitchState());
+        //obj.GetComponent<Button>().onClick.AddListener(() => SwitchState());
         Debug.Log("WalkState Begin enter");
     }
 
@@ -29,6 +29,11 @@ public class WalkState : IState
     public IEnumerable Execute()
     {
         yield return new WaitForSeconds(1.0f);
+    }
+
+    public void OnBeginExitEvent(StateBeginEventArgs eventArgs)
+    {
+        OnBeginExit(this, eventArgs);
     }
 
     public void SwitchState()
