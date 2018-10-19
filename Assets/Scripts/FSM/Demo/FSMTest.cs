@@ -5,7 +5,7 @@ using Game.FSM;
 using System;
 
 /// <summary>
-///基本状态机完成，转换测试完成，存在问题：现在只能单向转换，Idle->Walk->Attack->Idle轮回
+///基本状态机完成，转换测试完成，存在问题：现在只能单向转换，Idle->Walk->Attack->Idle轮回   
 /// </summary>
 public class FSMTest : MonoBehaviour
 {

@@ -11553,6 +11553,16 @@ Prefab:
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 82228182188396572, guid: 22ab9a75893865643b8d080a4cdb4713,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 82199249184266716, guid: 22ab9a75893865643b8d080a4cdb4713,
+        type: 2}
+      propertyPath: spreadCustomCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22ab9a75893865643b8d080a4cdb4713, type: 2}
   m_IsPrefabParent: 0

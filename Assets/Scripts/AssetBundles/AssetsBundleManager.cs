@@ -70,7 +70,6 @@ namespace Game.AssetBundles
             }
         }
 
-#if UNITY_EDITOR
         private static int mSimulateAssetBundleInEditor = -1;
         /// <summary>
         /// 标记以指示我们是否要在编辑器中模拟assetBundles而不实际构建它们。
@@ -79,8 +78,11 @@ namespace Game.AssetBundles
         {
             get
             {
+#if UNITY_EDITOR
                 if (mSimulateAssetBundleInEditor == -1)
                     mSimulateAssetBundleInEditor = EditorPrefs.GetBool(K_SIMULATE_ASSETBUNDLES, true) ? 1 : 0;
+#endif
+
                 return mSimulateAssetBundleInEditor != 0;
             }
             set
@@ -88,13 +90,16 @@ namespace Game.AssetBundles
                 int _value = value ? 1 : 0;
                 if(_value!=mSimulateAssetBundleInEditor)
                 {
+#if UNITY_EDITOR
                     mSimulateAssetBundleInEditor = _value;
                     EditorPrefs.SetBool(K_SIMULATE_ASSETBUNDLES, value);
+#endif
+
                 }
             }
         }
         private const string K_SIMULATE_ASSETBUNDLES = "simulate_asset_bundles";
-#endif
+
 
         /// <summary>
         /// 初始化assetbundle manager并开始下载清单资产包。返回清单资产包downolad操作对象。
@@ -132,11 +137,14 @@ namespace Game.AssetBundles
             BaseAssetBundleAssetOperation operation =null;
             if(Application.platform==RuntimePlatform.WindowsEditor && SimulateAssetBundleInEditor)
             {
+#if UNITY_EDITOR
                 //获取标有assetBundleName且命名为assetName的所有资产的资产路径。
                 string[] _assetPaths = AssetDatabase.GetAssetPathsFromAssetBundleAndAssetName(_assetBundleName, _assetName);
                 //现在我们只从第一个资产中获取主要对象。 还应该考虑类型。
                 UnityEngine.Object _obj = AssetDatabase.LoadMainAssetAtPath(_assetPaths[0]);
                 operation = new AssetBundleAssetSimulationOperation(_obj);
+#endif
+
             }
             else
             {
@@ -156,10 +164,13 @@ namespace Game.AssetBundles
 
             if(Application.platform==RuntimePlatform.WindowsEditor)
             {
-                if(SimulateAssetBundleInEditor)
+#if UNITY_EDITOR
+                if (SimulateAssetBundleInEditor)
                 {
                     operation = new AssetBundleSceneSimulationOperation(_assetbundleName, _sceneName, _isAdditive);
                 }
+#endif
+
             }
             else
             {

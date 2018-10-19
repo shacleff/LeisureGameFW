@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ThirdParty/XLua/Examples/08_Hotfix/HotfixTest.unity
-    guid: 71b8de6dc619ca64da460a7200f00b9c
+    path: Assets/Scenes/Lua.unity
+    guid: f81992b926dc7604da7684fb439f695c
