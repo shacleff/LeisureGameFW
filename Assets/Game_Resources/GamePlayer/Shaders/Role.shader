@@ -262,5 +262,4 @@ Shader "TF/Role" {
         }
     }
     FallBack "VertexLit"
-    CustomEditor "ShaderForgeMaterialInspector"
 }
