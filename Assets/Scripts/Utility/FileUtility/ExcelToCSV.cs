@@ -19,8 +19,7 @@ public class ExcelToCSV
         sw.WriteLine("ID,upgradeExp,maxHp,maxMp,attack,defense,precise,dodge,blastAttack");
         foreach (var key in originData.Keys)
         {
-            RoleItem i = originData[key] as RoleItem;
-            sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8}",i.ID,i.upgradeExp,i.maxHp,i.maxMp,i.attack,i.defense,i.precise,i.dodge,i.blastAttack);
+           // sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8}",i.ID,i.upgradeExp,i.maxHp,i.maxMp,i.attack,i.defense,i.precise,i.dodge,i.blastAttack);
         }
 
         sw.Close();

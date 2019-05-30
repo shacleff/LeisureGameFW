@@ -94,8 +94,9 @@ public class AssetBundleManager:MonoBehaviour
     {
         
         string _assetPath = AssetBundleConfig.ASSETBUNDLE_PATH + AssetBundleConfig.ASSETBUNDLE_FILENAM;
-        UnityWebRequest request = UnityWebRequest.GetAssetBundle(_assetPath);
-        yield return request.Send();
+        UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle(_assetPath);
+        //UnityWebRequest request = UnityWebRequest.GetAssetBundle(_assetPath);
+        yield return request.SendWebRequest();
         AssetBundle ab = DownloadHandlerAssetBundle.GetContent(request);
         AssetBundleManifest manifest = ab.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
         string[] _assetNames = manifest.GetAllAssetBundles();

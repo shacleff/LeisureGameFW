@@ -1,8 +1,6 @@
-﻿using DesignPattern;
+﻿
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using XLua;
 
 public class App : MonoSingleton<App>
 {
@@ -14,8 +12,6 @@ public class App : MonoSingleton<App>
     }
 
     public GameMode gameMode = GameMode.Developing;
-    public bool isShowTheFileLog = false;
-    public bool ShowTheTestObject = false;
 
     public delegate void LifeCircleCallback();
 
@@ -32,11 +28,9 @@ public class App : MonoSingleton<App>
     void Awake()
     {
         DontDestroyOnLoad(this);
-        InitBaseCompoenet();
 
         Instance = this;
         Application.targetFrameRate = 60;
-        LuaEnv env = new LuaEnv();
 
     }
 
@@ -47,31 +41,12 @@ public class App : MonoSingleton<App>
 
     void Update()
     {
-        if (this.onUpdate != null)
-            this.onUpdate();
+        //if (this.onUpdate != null)
+        //    this.onUpdate();
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-#if UNITY_EDITOR
-            if (!UnityEditor.EditorApplication.isPaused)
-                UnityEditor.EditorApplication.isPaused = true;
-            else
-                UnityEditor.EditorApplication.isPaused = false;
-#endif
-        }
+      
 
     }
-
-    private void InitBaseCompoenet()
-    {
-    }
-
-    private IEnumerator FinishLaunching()
-    {
-
-        yield return null;
-    }
-
     void FixedUpdate()
     {
         if (this.onFixedUpdate != null)

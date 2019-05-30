@@ -1,8 +1,0 @@
-﻿道具ID,中午,名称,类型,价格,威力,射速,子弹,转速,道具图标,
-int,string,string,int,int,int,int,int,int,string,
-propID,chinaName,name,type,price,power,fireRate,ammo,speed,icon,
-1,手枪,P92,1,0,1,1,12,2,UI/gun/gun_01,
-2,散弹枪,UZI,2,5000,1,3,30,3,UI/gun/gun_02,
-3,步枪,AK,2,12000,2,2,60,2,UI/gun/gun_03,
-4,火箭,98K,2,12000,3,1,20,1,UI/gun/gun_04,
-5,加特林,AUG,2,20000,2,3,100,2,UI/gun/gun_05,
