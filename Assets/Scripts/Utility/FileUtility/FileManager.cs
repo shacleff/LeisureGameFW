@@ -486,7 +486,30 @@ namespace FileUtility
             return allDrivers;
         }
 
-        
+        /// <summary>
+        /// 根据后缀获取文件名
+        /// </summary>
+        /// <param name="exts"></param>
+        /// <returns></returns>
+        public static List<string> GetExtensionFileName(string dirPath, string[] exts)
+        {
+            List<string> list = new List<string>();
+            DirectoryInfo directoryInfo = new DirectoryInfo(dirPath);
+            foreach (FileInfo item in directoryInfo.GetFiles())
+            {
+                for (int k = 0; k < exts.Length; k++)
+                {
+                    if (Path.GetExtension(item.FullName) == exts[k])
+                    {
+                        list.Add(item.Name);
+                        break;
+                    }
+                }
+            }
+            return list;
+        }
+
+
 
     }
 }
