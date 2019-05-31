@@ -5,7 +5,7 @@ using UnityEngine;
 using Utility;
 using UnityEngine.UI;
 
-public class FreeGiftPanel : BasePanel
+public class GiftPanel : BasePanel
 {
 
 
@@ -45,16 +45,10 @@ public class FreeGiftPanel : BasePanel
     {
         base.Start();
     }
-
-    public void Close()
+    
+    protected override void ClosePanelHandle(GameObject go)
     {
-
-        base.BasePanel_onCloseClick(gameObject);
-    }
-
-    protected override void BasePanel_onCloseClick(GameObject go)
-    {
-        base.BasePanel_onCloseClick(go);
+        base.ClosePanelHandle(go);
     }
 }
 

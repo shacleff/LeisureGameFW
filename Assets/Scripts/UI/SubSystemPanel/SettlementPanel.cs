@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettlementPanel : MonoBehaviour
+public class SettlementPanel : BasePanel
 {
     // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
-        
     }
 
     // Update is called once per frame

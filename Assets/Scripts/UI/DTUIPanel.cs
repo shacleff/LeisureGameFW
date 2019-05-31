@@ -6,7 +6,7 @@ namespace FlipGun
 {
     public class DTUIPanel
     {
-        public UIPanelID.UIFormId PanelId { get; set; }
+        public UIPanelID PanelId { get; set; }
         public string PanelName { get; set; }
         public string PanelPath { get; set; }
 
@@ -16,7 +16,7 @@ namespace FlipGun
 
         }
 
-        public DTUIPanel(UIPanelID.UIFormId _id, string _name, string _path)
+        public DTUIPanel(UIPanelID _id, string _name, string _path)
         {
             this.PanelId = _id;
             this.PanelName = _name;

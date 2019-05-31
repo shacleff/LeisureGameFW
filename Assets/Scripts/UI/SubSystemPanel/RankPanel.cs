@@ -39,9 +39,9 @@ public class RankPanel : BasePanel
         base.Start();
     }
 
-    protected override void BasePanel_onCloseClick(GameObject go)
+    protected override void ClosePanelHandle(GameObject go)
     {
-        base.BasePanel_onCloseClick(go);
+        base.ClosePanelHandle(go);
     }
 
 

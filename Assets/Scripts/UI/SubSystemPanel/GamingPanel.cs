@@ -8,15 +8,26 @@ using Utility;
 
 public class GamingPanel : BasePanel
 {
+    public GameObject pauseBtn;
 
     private bool isPause = false;
-
     private Transform UICamera;
 
     public override void Awake()
     {
         base.Awake();
         mCurrUItype.PanelShowMode = UIPanelShowMode.HideOther;
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        EventTriggerListener.Get(pauseBtn).onClick +=PauseHandler;
+    }
+
+    private void PauseHandler(GameObject go)
+    {
+        UIController.GetInstance().OpenPausePanel();
     }
 
     public override void Freeze()
@@ -33,14 +44,14 @@ public class GamingPanel : BasePanel
     {
         isPause = pause;
         Debug.Log("Pause...............");
-        Pause();
+
     }
 
     private void OnApplicationFocus(bool focus)
     {
         isPause = !focus;
         Debug.Log("..................focus " + isPause);
-        Pause();
+       
     }
 
     private void Update()
@@ -54,60 +65,10 @@ public class GamingPanel : BasePanel
         }
     }
 
-    public void Pause()
+
+    protected override void ClosePanelHandle(GameObject go)
     {
-
-    }
-
-    public void ContinueGame()
-    {
-
-        isPause = false;
-    }
-
-    public void BackHomeGame()
-    {
-        Time.timeScale = 1;
-        isPause = false;
-    }
-
-    public override void ReShow()
-    {
-        base.ReShow();
-    }
-
-    public override void Show()
-    {
-        base.Show();
-
-
-    }
-
-    public override void Start()
-    {
-        base.Start();
-
-    }
-
-    private void MusicToggle()
-    {
-
-    }
-
-    private void WaringAnimation()
-    {
-
-    }
-
-
-    private void OnEnable()
-    {
-        //Messenger.Broadcast<Transform>(ELocalMsgID.GAME_PALY, transform);
-    }
-
-    protected override void BasePanel_onCloseClick(GameObject go)
-    {
-        base.BasePanel_onCloseClick(go);
+        base.ClosePanelHandle(go);
 
     }
 

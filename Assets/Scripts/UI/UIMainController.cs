@@ -8,7 +8,7 @@ using FlipGun;
 /// <summary>
 /// UI窗体管理器脚本（框架核心脚本）
 /// </summary>
-public class UIManager
+public class UIMainController
 {
     /// <summary>
     /// 1、面板名称；
@@ -68,7 +68,7 @@ public class UIManager
     public GameObject LeftCamera;
     public GameObject RightCamera;
 
-    public UIManager()
+    public UIMainController()
     {
         Init();
         LeftCamera = GameObject.Find("LeftCamera");
@@ -86,26 +86,12 @@ public class UIManager
 
         //InitRootCanvas();
         mRootTransfrom = GameObject.Find(UIDefine.TOP_CANVAS_NAME).transform;
-        mNormalTransfrom = GameObjectHelper.GetGameObjectByName(mRootTransfrom, UIDefine.UI_NORMAL);
-        mFixedTransfrom = GameObjectHelper.GetGameObjectByName(mRootTransfrom, UIDefine.UI_FIXED);
-        mPopupTransfrom = GameObjectHelper.GetGameObjectByName(mRootTransfrom, UIDefine.UI_POPUP);
-        mTopTransfrom = GameObjectHelper.GetGameObjectByName(mRootTransfrom, UIDefine.UI_TOP);
 
         InitUIPanelConfig();
     }
 
     private void InitUIPanelConfig()
     {
-        //Manager.GetInstance().DictionaryConfig.LoadDictionaryFormPath(GlobalPath.UIPANEL_PATH);
-        //mPanelNameToPath = Manager.GetInstance().DictionaryConfig.AppSetting;
-        mPanelNameToPath.Add("MainGamePanel", "UIPrefabs\\Panels\\MainGamePanel");
-        mPanelNameToPath.Add("AchievementPanel", "UIPrefabs\\Panels\\AchievementPanel");
-        mPanelNameToPath.Add("FreeGiftPanel", "UIPrefabs\\Panels\\FreeGiftPanel");
-        mPanelNameToPath.Add("RankPanel", "UIPrefabs\\Panels\\RankPanel");
-        mPanelNameToPath.Add("MallPanel", "UIPrefabs\\Panels\\MallPanel");
-        mPanelNameToPath.Add("GamingPanel", "UIPrefabs\\Panels\\GamingPanel");
-        mPanelNameToPath.Add("GameOverPanel", "UIPrefabs\\Panels\\GameOverPanel");
-
 
     }
 
@@ -121,7 +107,7 @@ public class UIManager
         for (int i = 0; i < dTUIPanels.Count; i++)
         {
             DTUIPanel _panel = dTUIPanels[i];
-            if (_panel.PanelId == (UIPanelID.UIFormId)_paneID)
+            if (_panel.PanelId == (UIPanelID)_paneID)
             {
                 OpenPanel(_panel.PanelName);
             }

@@ -14,6 +14,12 @@ public class AchievementPanel : BasePanel
         base.Awake();
     }
 
+    public override void Start()
+    {
+        base.Start();
+    }
+
+
     public override bool Equals(object other)
     {
         return base.Equals(other);
@@ -45,14 +51,7 @@ public class AchievementPanel : BasePanel
 
     }
 
-    public override void Start()
-    {
-        base.Start();
-
-
-
-    }
-
+    
     private void AchievementPanel_onClick(GameObject go)
     {
 
@@ -63,9 +62,9 @@ public class AchievementPanel : BasePanel
         return base.ToString();
     }
 
-    protected override void BasePanel_onCloseClick(GameObject go)
+    protected override void ClosePanelHandle(GameObject go)
     {
-        base.BasePanel_onCloseClick(go);
+        base.ClosePanelHandle(go);
     }
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Events;
 
 /// <summary>
 /// UI窗体脚本（父类，其他窗体都继承此脚本）
@@ -21,11 +22,7 @@ public class BasePanel : MonoBehaviour
         }
     }
 
-    protected GameObject mCloseBtn;
-    protected GameObject CloseBtn
-    {
-        get { return mCloseBtn; }
-    }
+    public GameObject closeBtn;
 
     protected string mPanelName;
     public string PanelName
@@ -40,15 +37,15 @@ public class BasePanel : MonoBehaviour
 
     public virtual void Start()
     {
+        EventTriggerListener.Get(closeBtn).onClick += ClosePanelHandle;
+    }
 
+    protected virtual void ClosePanelHandle(GameObject go)
+    {
+        this.gameObject.SetActive(false);
     }
 
     public virtual void LateUpdate()
-    {
-
-    }
-
-    protected virtual void BasePanel_onCloseClick(GameObject go)
     {
 
     }

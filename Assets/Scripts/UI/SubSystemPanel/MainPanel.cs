@@ -6,19 +6,39 @@ using UnityEngine.UI;
 
 public class MainPanel : MonoBehaviour
 {
-    public GameObject startBtn;
-    public GameObject achievementBtn;
-    public GameObject missionBtn;
-    public GameObject settingBtn;
-    public GameObject shopBtn;
-    public GameObject bagBtn;
-    public GameObject rankBtn;
-    public GameObject giftBtn;
+    [HideInInspector]
+    public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn;
+    //public GameObject achievementBtn;
+    //public GameObject missionBtn;
+    //public GameObject settingBtn;
+    //public GameObject shopBtn;
+    //public GameObject bagBtn;
+    //public GameObject rankBtn;
+    //public GameObject giftBtn;
+
+    [HideInInspector]
+    public bool StartBtnSwitch=true;
+    [HideInInspector]
+    public bool achievementBtnSwitch = true;
+    [HideInInspector]
+    public bool missionBtnSwitch = true;
+    [HideInInspector]
+    public bool settingBtnSwitch = true;
+    [HideInInspector]
+    public bool shopBtnSwitch = true;
+    [HideInInspector]
+    public bool bagBtnSwitch = true;
+    [HideInInspector]
+    public bool rankBtnSwitch = true;
+    [HideInInspector]
+    public bool giftBtnSwitch = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        toggleSwitch();
+
         startBtn.GetComponent<Button>().onClick.AddListener(PlayGame);
         achievementBtn.GetComponent<Button>().onClick.AddListener(OpenAchievementPanel);
         missionBtn.GetComponent<Button>().onClick.AddListener(OpenMissionPanel);
@@ -29,44 +49,57 @@ public class MainPanel : MonoBehaviour
         giftBtn.GetComponent<Button>().onClick.AddListener(OpenGiftPanel);
     }
 
+    public void toggleSwitch()
+    {
+        startBtn.SetActive(StartBtnSwitch);
+        achievementBtn.SetActive(achievementBtnSwitch);
+        missionBtn.SetActive(missionBtnSwitch);
+        settingBtn.SetActive(settingBtnSwitch);
+        shopBtn.SetActive(shopBtnSwitch);
+        bagBtn.SetActive(bagBtnSwitch);
+        rankBtn.SetActive(rankBtnSwitch);
+        giftBtn.SetActive(giftBtnSwitch);
+        
+    }
+
     private void PlayGame()
     {
-        Debug.Log("PlayGame");
+        UIController.GetInstance().PlayGame();
     }
 
     public void OpenAchievementPanel()
     {
-        Debug.Log("OpenAchievementPanel");
+        UIController.GetInstance().OpenAchievementPanel();
     }
 
     public void OpenMissionPanel()
     {
-        Debug.Log("OpenMissionPanel");
+        UIController.GetInstance().OpenMissionPanel();
     }
 
     public void OpenSettingPanel()
     {
-        Debug.Log("OpenSettingPanel");
+        UIController.GetInstance().OpenSettingPanel();
     }
 
     public void OpenShopPanel()
     {
-        Debug.Log("OpenShopPanel");
+        UIController.GetInstance().OpenShopPanel();
     }
 
     public void OpenBagPanel()
     {
-        Debug.Log("OpenBagPanel");
+        UIController.GetInstance().OpenBagPanel();
     }
 
     public void OpenRankPanel()
     {
-        Debug.Log("OpenRankPanel");
+        UIController.GetInstance().OpenRankPanel();
     }
 
     public void OpenGiftPanel()
     {
-        Debug.Log("OpenGiftPanel");
+        UIController.GetInstance().OpenGiftPanel();
     }
 
     // Update is called once per frame

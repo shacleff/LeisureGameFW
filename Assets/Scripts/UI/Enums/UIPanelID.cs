@@ -2,29 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIPanelID
+/// <summary>
+/// 界面编号。
+/// </summary>
+public enum UIPanelID
 {
-    /// <summary>
-    /// 界面编号。
-    /// </summary>
-    public enum UIFormId
-    {
-        MainGamePanel = 0,
+    AchievementPanel = 0,
+    BagPanel = 1,
+    GiftPanel = 2,
+    GameOverPanel = 3,
+    GamingPanel = 4,
+    LevelSelectPanel = 5,
+    MainPanel = 6,
+    MissionPanel = 7,
+    RankPanel = 8,
+    SettingPanel = 9,
+    SettlementPanel = 10,
+    ShopPanel = 11,
+    PausePanel=12,
+    Other
 
-        GamingPanel = 1,
-
-        AchievementPanel = 2,
-
-        FreeGiftPanel = 3,
-
-        LevelSelectPanel = 4,
-
-        RankPanel = 5,
-
-        GameOverPanel = 6,
-
-        SettingPanel = 7,
-
-        MallPanel = 8
-    }
 }

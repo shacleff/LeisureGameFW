@@ -9,8 +9,22 @@ using Utility;
 public class BagPanel : BasePanel
 {
 
+    public override void Awake()
+    {
+        base.Awake();
+        //Messenger.AddListener(ELocalMsgID.USER_DATA_
+    }
 
+    // Use this for initialization
+    public override void Start()
+    {
+        base.Start();
+    }
 
+    protected override void ClosePanelHandle(GameObject go)
+    {
+        base.ClosePanelHandle(go);
+    }
 
     public override void Freeze()
     {
@@ -50,16 +64,7 @@ public class BagPanel : BasePanel
     {
     }
 
-    public override void Awake()
-    {
-        base.Awake();
-        //Messenger.AddListener(ELocalMsgID.USER_DATA_
-    }
-
-    // Use this for initialization
-    public override void Start()
-    {
-    }
+    
 
     void Update()
     {
