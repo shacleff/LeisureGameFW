@@ -50,12 +50,15 @@ public class RewardItemView : BaseItemView
     public override void ClickHandle()
     {
         base.ClickHandle();
+
+        this.CheckImg.gameObject.SetActive(true);
     }
     
 
     public override void UpdateState()
     {
         base.UpdateState();
+       // this.CheckImg.gameObject.SetActive(false);
     }
     
 

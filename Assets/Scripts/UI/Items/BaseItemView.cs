@@ -29,6 +29,13 @@ public class BaseItemView : MonoBehaviour
 
     public virtual void ClickHandle()
     {
+        //这里应该加上是否解锁
+        GamePlayerPrefs.SetCurrItem(Index);
+        if((GamePlayerPrefs.IsBuyedItem(Index) && (GamePlayerPrefs.GetCurrItem()!=Index))==false)
+        {
+            Debug.Log("未解锁");
+            TipBox.Instance.ShowMessage("未解锁",0.5f);
+        }
         EventManager.Instance.DispatchEvent(ShopEventMsg.UPDATE_ITEM_UI);
         UpdateState();
         
@@ -45,7 +52,7 @@ public class BaseItemView : MonoBehaviour
         bool isBuy = GamePlayerPrefs.IsBuyedItem(Index);
         bool isUnlock = isBuy && GamePlayerPrefs.GetCurrItem() != Index;
         bool isChoose = isBuy && GamePlayerPrefs.GetCurrItem() == Index;
-        Debug.Log("isBuy:" + isBuy + ",isUnlock:" + isUnlock + ",isChoose:" + isChoose);
+        //Debug.Log("isBuy:" + isBuy + ",isUnlock:" + isUnlock + ",isChoose:" + isChoose);
         LockImg.gameObject.SetActive(!isBuy);
         CheckImg.gameObject.SetActive(isChoose);
     }
