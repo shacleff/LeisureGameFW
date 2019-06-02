@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// 物品Item 基类 UI
+/// </summary>
 public class BaseItemView : MonoBehaviour
 {
     public Image ItemImg;
@@ -15,19 +18,19 @@ public class BaseItemView : MonoBehaviour
 
     public BaseItem itemData;
     public int Index { get; set; }
+    public Vector3 CurrLocalScale = Vector3.one;
 
     // Start is called before the first frame update
     public virtual void Start()
     {
-        Sprite _sprite = UIResourceManager.Instance.spriteArr[Index];
-        ItemImg.sprite = _sprite;
-        NameText.text = Index.ToString();
         GetComponent<Button>().onClick.AddListener(() => ClickHandle());
-        UpdateState();
+        //UpdateState();
     }
 
     public virtual void ClickHandle()
     {
+        EventManager.Instance.DispatchEvent(ShopEventMsg.UPDATE_ITEM_UI);
+        UpdateState();
         
     }
 
@@ -42,7 +45,7 @@ public class BaseItemView : MonoBehaviour
         bool isBuy = GamePlayerPrefs.IsBuyedItem(Index);
         bool isUnlock = isBuy && GamePlayerPrefs.GetCurrItem() != Index;
         bool isChoose = isBuy && GamePlayerPrefs.GetCurrItem() == Index;
-
+        Debug.Log("isBuy:" + isBuy + ",isUnlock:" + isUnlock + ",isChoose:" + isChoose);
         LockImg.gameObject.SetActive(!isBuy);
         CheckImg.gameObject.SetActive(isChoose);
     }

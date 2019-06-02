@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ItemView : BaseItemView
+public class RewardItemView : BaseItemView
 {
     #region 组件声明
     //public Image ItemImg;
@@ -41,33 +41,21 @@ public class ItemView : BaseItemView
     public override void Start()
     {
         base.Start();
-        //Sprite _sprite= DataHandler.GetInstance().ItemSprites[Index];
-        //ItemImg.sprite = _sprite;
-        //NameText.text = Index.ToString();
-        //GetComponent<Button>().onClick.AddListener(() => ClickHandle());
-        //UpdateState();
+        Sprite _sprite= UIResourceManager.Instance.spriteArr[Index];
+        ItemImg.sprite = _sprite;
+        NameText.text = Index.ToString();
+        UpdateState();
     }
 
     public override void ClickHandle()
     {
         base.ClickHandle();
     }
-
-    public void SetData()
-    {
-
-    }
+    
 
     public override void UpdateState()
     {
         base.UpdateState();
-        //bool isBuy = GamePlayerPrefs.IsBuyedItem(Index);
-        //bool isUnlock = isBuy && GamePlayerPrefs.GetCurrItem() != Index;
-        //bool isChoose = isBuy && GamePlayerPrefs.GetCurrItem() == Index;
-
-        //LockImg.gameObject.SetActive(!isBuy);
-        //CheckImg.gameObject.SetActive(isChoose);
-        //SignImg.gameObject.SetActive(isChoose);
     }
     
 

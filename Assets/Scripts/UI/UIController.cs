@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class UIController : MonoSingleton<UIController>
 {
+    public Transform uiPanelParent;
     public GameObject mainPanel;
     public GameObject achivevementPanel;
     public GameObject bagPanel;
@@ -21,7 +22,7 @@ public class UIController : MonoSingleton<UIController>
 
     private void Awake()
     {
-        foreach (Transform uiPanel in transform)
+        foreach (Transform uiPanel in uiPanelParent)
         {
             if (uiPanel.gameObject.name != "MainPanel") uiPanel.gameObject.SetActive(false);
         }

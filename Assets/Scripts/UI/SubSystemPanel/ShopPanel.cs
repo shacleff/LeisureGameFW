@@ -6,6 +6,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utility;
 
+
+/// <summary>
+/// 商店UI控制类，负责商店中的UI逻辑的处理
+/// </summary>
 public class ShopPanel : BasePanel
 {
     public GameObject ItemPrefab;
@@ -25,8 +29,10 @@ public class ShopPanel : BasePanel
     {
         base.Start();
         InitItemView();
-    }
 
+        EventManager.Instance.AddEventListener(ShopEventMsg.UPDATE_ITEM_UI, UpdateItemState);
+    }
+    
 
     private void InitItemView()
     {
@@ -35,19 +41,35 @@ public class ShopPanel : BasePanel
         for (int i = 0; i < itemSprites.Count; i++)
         {
             obj = Instantiate(ItemPrefab, ItemContent);
-            obj.GetComponent<ItemView>().SetData();
-            obj.GetComponent<ItemView>().Index = i;
+            obj.GetComponent<BaseItemView>().Index = i;
             itemViews.Add(obj.GetComponent<BaseItemView>());
         }
     }
 
-    public void UpdateItemState()
+
+
+    public void UpdateItemState(object param)
     {
         
         foreach (BaseItemView item in itemViews)
         {
             item.UpdateState();
         }
+    }
+
+    public void Buy()
+    {
+        EventManager.Instance.DispatchEvent(ShopEventMsg.BUY_ITEM_MSG);
+    }
+
+    public void RandomBuy()
+    {
+        EventManager.Instance.DispatchEvent(ShopEventMsg.RANDOM_BUY_ITEM_MSG);
+    }
+
+    public void FreeReward()
+    {
+        EventManager.Instance.DispatchEvent(ShopEventMsg.SHOP_REWARD);
     }
 
 

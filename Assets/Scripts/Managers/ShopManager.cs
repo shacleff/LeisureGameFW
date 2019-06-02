@@ -5,15 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Events;
 
-public class ShopEventMsg
-{
-    public static string BUY_ITEM_MSG = "buy_item_msg";
-    public static string RANDOM_BUY_ITEM_MSG = "random_buy_item_msg";
-    public static string UPDATE_SHOP_UI = "update_shop_ui";
-    public static string UPDATE_ITEM_UI = "update_item_ui";
-}
 
 
+/// <summary>
+/// 商店管理类（Controller 业务逻辑部分，UI逻辑部分在ShopPanel）
+/// </summary>
 public class ShopManager : MonoBehaviour
 {
     private List<int> ItemIndexs;
@@ -31,6 +27,8 @@ public class ShopManager : MonoBehaviour
         LockItemIndexs = new List<int>();
         UnLockItemIndexs = new List<int>();
         
+       
+        
     }
 
     void Start ()
@@ -39,7 +37,12 @@ public class ShopManager : MonoBehaviour
         UpdateData();
         EventManager.Instance.AddEventListener(ShopEventMsg.BUY_ITEM_MSG, BuyItem);
         EventManager.Instance.AddEventListener(ShopEventMsg.RANDOM_BUY_ITEM_MSG, RandomBuyItem);
+        EventManager.Instance.AddEventListener(ShopEventMsg.SHOP_REWARD, RewardHandler);
 	}
+
+    private void RewardHandler(object param)
+    {
+    }
 
     private void BuyItem(object param)
     {

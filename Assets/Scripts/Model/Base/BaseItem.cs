@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 基本物品类
+/// 基本物品类 数据
 /// </summary>
 [Serializable]
 public class BaseItem 

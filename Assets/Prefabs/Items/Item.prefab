@@ -32,10 +32,10 @@ RectTransform:
   m_Father: {fileID: 224967952970880120}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.6699982, y: -1.3699951}
-  m_SizeDelta: {x: -44.710007, y: -45.460007}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 40.6, y: 25.5}
+  m_SizeDelta: {x: 85.23, y: 88.654}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222274857336444544
 CanvasRenderer:
@@ -108,7 +108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.67, y: -60.7}
+  m_AnchoredPosition: {x: -1.67, y: -70.2}
   m_SizeDelta: {x: 124.67, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222324388910873788
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -187,7 +187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0024977, y: -30.7}
+  m_AnchoredPosition: {x: -0.0024977, y: 71.4}
   m_SizeDelta: {x: 128.01, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222173877403464204
@@ -266,7 +266,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15.299988}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 115, y: 122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &222120629142232480
@@ -553,10 +553,18 @@ MonoBehaviour:
   BgImg: {fileID: 114698550383136678}
   CheckImg: {fileID: 114808011700100554}
   LockImg: {fileID: 114170255610628266}
-  SignImg: {fileID: 114588552262176336}
-  RedImg: {fileID: 114505612744947766}
   NameText: {fileID: 114662957900429810}
   ValueText: {fileID: 114922154758839298}
+  itemData:
+    Name: 
+    Desc: 
+    SpriteName: 
+    ItemSprite: {fileID: 0}
+    SpritePath: 
+    IsLock: 0
+    Price: 0
+    CostCoin: 0
+  CurrLocalScale: {x: 1, y: 1, z: 1}
 --- !u!114 &114690917834764854
 MonoBehaviour:
   m_ObjectHideFlags: 0
