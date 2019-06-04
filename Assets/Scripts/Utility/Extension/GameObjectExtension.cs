@@ -113,6 +113,7 @@ public static class GameObjectExtension
     {
         if (transform.GetComponent<RectTransform>() == null)
         {
+            Debug.LogError("The gameobject is not RectTransform component");
             return;
         }
         transform.GetComponent<RectTransform>().anchoredPosition = vector2;
@@ -122,6 +123,7 @@ public static class GameObjectExtension
     {
         if (transform.GetComponent<RectTransform>() == null)
         {
+            Debug.LogError("The gameobject is not RectTransform component");
             return;
         }
         transform.GetComponent<RectTransform>().anchoredPosition3D = vector3;

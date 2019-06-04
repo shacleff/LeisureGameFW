@@ -3,18 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Events;
 
 public class MainPanel : MonoBehaviour
 {
     [HideInInspector]
     public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn;
-    //public GameObject achievementBtn;
-    //public GameObject missionBtn;
-    //public GameObject settingBtn;
-    //public GameObject shopBtn;
-    //public GameObject bagBtn;
-    //public GameObject rankBtn;
-    //public GameObject giftBtn;
 
     [HideInInspector]
     public bool StartBtnSwitch=true;
@@ -33,20 +27,39 @@ public class MainPanel : MonoBehaviour
     [HideInInspector]
     public bool giftBtnSwitch = true;
 
+    public Text coinText;
+    public Text gemText;
+
 
     // Start is called before the first frame update
     void Start()
     {
         toggleSwitch();
 
-        startBtn.GetComponent<Button>().onClick.AddListener(PlayGame);
-        achievementBtn.GetComponent<Button>().onClick.AddListener(OpenAchievementPanel);
-        missionBtn.GetComponent<Button>().onClick.AddListener(OpenMissionPanel);
-        settingBtn.GetComponent<Button>().onClick.AddListener(OpenSettingPanel);
-        shopBtn.GetComponent<Button>().onClick.AddListener(OpenShopPanel);
-        bagBtn.GetComponent<Button>().onClick.AddListener(OpenBagPanel);
-        rankBtn.GetComponent<Button>().onClick.AddListener(OpenRankPanel);
-        giftBtn.GetComponent<Button>().onClick.AddListener(OpenGiftPanel);
+
+        EventTriggerListener.Get(startBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(achievementBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(missionBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(settingBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(shopBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(bagBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(rankBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(giftBtn).onClick += OpenPanelBtnHandler;
+
+        this.coinText.text = GameManagers.GetInstance().Coin.ToString();
+        this.gemText.text = GameManagers.GetInstance().Gem.ToString();
+        EventManager.Instance.AddEventListener(EventArg.COIN_CHANGE, UpdateCoin);
+        EventManager.Instance.AddEventListener(EventArg.GEM_CHANGE, UpdateGem);
+    }
+
+    private void UpdateCoin(object param)
+    {
+        this.coinText.text = param.ToString();
+    }
+
+    private void UpdateGem(object param)
+    {
+        this.gemText.text = param.ToString();
     }
 
     public void toggleSwitch()
@@ -62,44 +75,81 @@ public class MainPanel : MonoBehaviour
         
     }
 
+    public void OpenPanelBtnHandler(GameObject obj)
+    {
+        switch (obj.name)
+        {
+            case "startBtn":
+                UIController.GetInstance().PlayGame();
+                SoundManager.Instance.PlaySound(0);
+                break;
+            case "achievementBtn":
+                UIController.GetInstance().OpenAchievementPanel();
+                SoundManager.Instance.PlaySound(1);
+                break;
+            case "missionBtn":
+                UIController.GetInstance().OpenMissionPanel();
+                SoundManager.Instance.PlaySound(2);
+                break;
+            case "settingBtn":
+                UIController.GetInstance().OpenSettingPanel();
+                SoundManager.Instance.PlaySound(3);
+                break;
+            case "shopBtn":
+                UIController.GetInstance().OpenShopPanel();
+                break;
+            case "bagBtn":
+                UIController.GetInstance().OpenBagPanel();
+                break;
+            case "rankBtn":
+                UIController.GetInstance().OpenRankPanel();
+                break;
+            case "giftBtn":
+                UIController.GetInstance().OpenGiftPanel();
+                break;
+            default:
+                break;
+        }
+    }
+
     private void PlayGame()
     {
-        UIController.GetInstance().PlayGame();
+        
     }
 
     public void OpenAchievementPanel()
     {
-        UIController.GetInstance().OpenAchievementPanel();
+        
     }
 
     public void OpenMissionPanel()
     {
-        UIController.GetInstance().OpenMissionPanel();
+        
     }
 
     public void OpenSettingPanel()
     {
-        UIController.GetInstance().OpenSettingPanel();
+        
     }
 
     public void OpenShopPanel()
     {
-        UIController.GetInstance().OpenShopPanel();
+        
     }
 
     public void OpenBagPanel()
     {
-        UIController.GetInstance().OpenBagPanel();
+        
     }
 
     public void OpenRankPanel()
     {
-        UIController.GetInstance().OpenRankPanel();
+        
     }
 
     public void OpenGiftPanel()
     {
-        UIController.GetInstance().OpenGiftPanel();
+        
     }
 
     // Update is called once per frame

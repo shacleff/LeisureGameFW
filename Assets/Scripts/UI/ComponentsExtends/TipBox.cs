@@ -22,7 +22,7 @@ public class TipBox :MonoBehaviour
         gameObject.SetActive(true);
         msgText.text = str;
         isLock = true;
-        rectTrans.anchoredPosition = new Vector2(0, -100);
+        gameObject.SetAnchorPosition(new Vector2(0, -100));
         rectTrans.DOAnchorPosY(300, _timer).OnComplete(()=> {
             isLock = false;
             gameObject.SetActive(false);

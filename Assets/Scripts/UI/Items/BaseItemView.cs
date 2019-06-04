@@ -29,6 +29,7 @@ public class BaseItemView : MonoBehaviour
 
     public virtual void ClickHandle()
     {
+        
         //这里应该加上是否解锁
         GamePlayerPrefs.SetCurrItem(Index);
         if((GamePlayerPrefs.IsBuyedItem(Index) && (GamePlayerPrefs.GetCurrItem()!=Index))==false)

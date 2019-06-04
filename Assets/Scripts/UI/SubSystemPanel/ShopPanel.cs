@@ -16,7 +16,7 @@ public class ShopPanel : BasePanel
     public Transform ItemContent;
 
     public Button BuyBtn;
-    private ScrollRect scrollRect;
+    public ScrollRect scrollRect;
     private GridLayoutGroup Layout;
     private List<BaseItemView> itemViews = new List<BaseItemView>();
 
@@ -43,7 +43,9 @@ public class ShopPanel : BasePanel
             obj = Instantiate(ItemPrefab, ItemContent);
             obj.GetComponent<BaseItemView>().Index = i;
             itemViews.Add(obj.GetComponent<BaseItemView>());
+            scrollRect.gameObject.GetComponent<ScrollFocusController>().ItemTrans.Add(obj.transform);
         }
+        scrollRect.gameObject.GetComponent<ScrollFocusController>().InitIndexArr();
     }
 
 

@@ -17,8 +17,6 @@ public class ShopManager : MonoBehaviour
     private List<int> UnLockItemIndexs;
     private ScrollRect scrollRect;
     private GridLayoutGroup Layout;
-    private int mCostCoin=100;
-    private int mActualCoin = 50;
     private int mCurrItemIndex=0;
 
     private void Awake()
