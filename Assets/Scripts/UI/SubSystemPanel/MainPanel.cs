@@ -8,7 +8,7 @@ using Events;
 public class MainPanel : MonoBehaviour
 {
     [HideInInspector]
-    public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn;
+    public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn,levelBtn;
 
     [HideInInspector]
     public bool StartBtnSwitch=true;
@@ -26,6 +26,8 @@ public class MainPanel : MonoBehaviour
     public bool rankBtnSwitch = true;
     [HideInInspector]
     public bool giftBtnSwitch = true;
+    [HideInInspector]
+    public bool levelBtnSwitch = true;
 
     public Text coinText;
     public Text gemText;
@@ -45,6 +47,7 @@ public class MainPanel : MonoBehaviour
         EventTriggerListener.Get(bagBtn).onClick += OpenPanelBtnHandler;
         EventTriggerListener.Get(rankBtn).onClick += OpenPanelBtnHandler;
         EventTriggerListener.Get(giftBtn).onClick += OpenPanelBtnHandler;
+        EventTriggerListener.Get(levelBtn).onClick += OpenPanelBtnHandler;
 
         this.coinText.text = GameManagers.GetInstance().Coin.ToString();
         this.gemText.text = GameManagers.GetInstance().Gem.ToString();
@@ -106,6 +109,9 @@ public class MainPanel : MonoBehaviour
                 break;
             case "giftBtn":
                 UIController.GetInstance().OpenGiftPanel();
+                break;
+            case "levelBtn":
+                UIController.GetInstance().OpenLevelPanel();
                 break;
             default:
                 break;

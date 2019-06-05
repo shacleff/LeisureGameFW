@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameManagers : MonoSingleton<GameManagers>
 {
+    public GameStatus gameStatus { get; set; }
+
     public bool IsMusic { get; private set; }
     public bool IsSound { get; private set; }
 
@@ -35,11 +37,27 @@ public class GameManagers : MonoSingleton<GameManagers>
     {
         SoundManager.Instance.Initialized();
 
-
+        gameStatus = GameStatus.IDLE;
     }
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    public void StartGame()
+    {
+        gameStatus = GameStatus.GAMING;
+    }
+    
+
+    public void GameOver()
+    {
+        gameStatus = GameStatus.GAMOVER;
+    }
+
+    public void GameReward()
     {
 
     }

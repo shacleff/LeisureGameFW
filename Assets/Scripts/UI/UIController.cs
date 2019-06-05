@@ -145,6 +145,12 @@ public class UIController : MonoSingleton<UIController>
         bagPanel.SetActive(true);
     }
 
+    public void OpenLevelPanel()
+    {
+        Debug.Log("OpenLevelPanel");
+        levelSelectPanel.SetActive(true);
+    }
+
     public void OpenRankPanel()
     {
         Debug.Log("OpenRankPanel");

@@ -31,6 +31,7 @@ public class MainPanelEditor : Editor
             script.bagBtn = (GameObject)EditorGUILayout.ObjectField("bagBtn", script.bagBtn, typeof(UnityEngine.GameObject), true);
             script.rankBtn = (GameObject)EditorGUILayout.ObjectField("rankBtn", script.rankBtn, typeof(UnityEngine.GameObject), true);
             script.giftBtn = (GameObject)EditorGUILayout.ObjectField("giftBtn", script.giftBtn, typeof(UnityEngine.GameObject), true);
+            script.levelBtn = (GameObject)EditorGUILayout.ObjectField("levelBtn", script.levelBtn, typeof(UnityEngine.GameObject), true);
         }
 
         BtnSwitch = EditorGUILayout.Foldout(BtnSwitch, "可用按钮开关");
@@ -44,6 +45,7 @@ public class MainPanelEditor : Editor
             script.bagBtnSwitch = EditorGUILayout.Toggle("bagBtnSwitch", script.bagBtnSwitch);
             script.rankBtnSwitch = EditorGUILayout.Toggle("rankBtnSwitch", script.rankBtnSwitch);
             script.giftBtnSwitch = EditorGUILayout.Toggle("giftBtnSwitch", script.giftBtnSwitch);
+            script.levelBtnSwitch = EditorGUILayout.Toggle("levelBtnSwitch", script.levelBtnSwitch);
         }
 
         serializedObject.ApplyModifiedProperties();
