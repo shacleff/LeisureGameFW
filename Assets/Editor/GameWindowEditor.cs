@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -28,6 +29,14 @@ public class GameWindowEditor : EditorWindow
     }
 
     private void OnGUI()
+    {
+        if(GUILayout.Button("select", SetGUIStyle(30)))
+        {
+            
+        }
+    }
+
+    private void OnGUI2()
     {
         GUI.color=Color.white;
         GUILayout.Label("GameEditor", SetGUIStyle(30));
@@ -72,7 +81,6 @@ public class GameWindowEditor : EditorWindow
             _item.Price = IntField("Price: ", _item.Price);
             _item.SpriteName = TextField("SpriteName: ", _item.SpriteName);
             _item.SpritePath = TextField("SpritePath: ", _item.SpritePath);
-            _item.ItemSprite = ShowSprite("ItemSprite: ", _item.ItemSprite);
             Space(20);
         }
         BeginHor();
@@ -160,7 +168,7 @@ public class GameWindowEditor : EditorWindow
         return EditorGUILayout.Toggle(_label, _value, "Toggle");
     }
 
-    private Sprite ShowSprite(string _label, Object obj)
+    private Sprite ShowSprite(string _label, UnityEngine.Object obj)
     {
         return EditorGUILayout.ObjectField(_label, obj, typeof(Sprite), false) as Sprite;
     }

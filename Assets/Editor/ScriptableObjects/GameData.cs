@@ -14,7 +14,7 @@ public class GameData : ScriptableObject
 
 [Serializable]
 public class ItemNameList
-{
+{ 
     public string Name;
     public List<BaseItem> ItemList;
 }
