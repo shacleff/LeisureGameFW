@@ -24,24 +24,16 @@ public class GameWindowEditor : EditorWindow
     {
         toggles = new bool[] { false, false, false, false, false };
         buttons = new string[] { "Open", "Open", "Open", "Open", "Open" };
-        gameData = (GameData)AssetDatabase.LoadAssetAtPath("Assets/GameDataObject.asset",typeof(GameData));
+        gameData = (GameData)AssetDatabase.LoadAssetAtPath("Assets/GameData.asset",typeof(GameData));
 
     }
 
     private void OnGUI()
     {
-        if(GUILayout.Button("select", SetGUIStyle(30)))
-        {
-            
-        }
-    }
-
-    private void OnGUI2()
-    {
-        GUI.color=Color.white;
+        GUI.color = Color.white;
         GUILayout.Label("GameEditor", SetGUIStyle(30));
 
-        scrollPosition=GUILayout.BeginScrollView(scrollPosition);
+        scrollPosition = GUILayout.BeginScrollView(scrollPosition);
 
         #region Item
 
@@ -50,7 +42,7 @@ public class GameWindowEditor : EditorWindow
             Space(10);
             string _name = gameData.itemNameListmap[i].Name;
             List<BaseItem> items = gameData.itemNameListmap[i].ItemList;
-            HideHeader("Item-"+_name, _name, i);
+            HideHeader("Item-" + _name, _name, i);
             if (toggles[i])
             {
                 buttons[i] = "Close";
@@ -62,9 +54,9 @@ public class GameWindowEditor : EditorWindow
             EndVert();
         }
 
-        
+
         #endregion
-        
+
         GUILayout.EndScrollView();
     }
 
@@ -81,10 +73,11 @@ public class GameWindowEditor : EditorWindow
             _item.Price = IntField("Price: ", _item.Price);
             _item.SpriteName = TextField("SpriteName: ", _item.SpriteName);
             _item.SpritePath = TextField("SpritePath: ", _item.SpritePath);
+            _item.ItemSprite = ShowSprite("itemSprite:", _item.ItemSprite);
             Space(20);
         }
         BeginHor();
-        if (GUILayout.Button("Add Item"))
+        if (GUILayout.Button("Add Item")) 
         {
             items.Add(new BaseItem());
         }
@@ -100,13 +93,13 @@ public class GameWindowEditor : EditorWindow
     private void HideHeader(string title,string secondTitle,int blockIndex)
     {
         BeginVert();
-        LabelField(title, "TL Selection H2");
+        LabelField(title, "TL Selection H1");
         BeginHor();
         if (GUILayout.Button(buttons[blockIndex], SetW(50), SetH(25))) toggles[blockIndex] = !toggles[blockIndex];
         BeginHor("HelpBox");
         
         LabelField(secondTitle, "infoHelpBoxText");
-        GUILayout.Label("item" + blockIndex, SetW(50), SetH(20));
+        GUILayout.Label("item" + blockIndex, SetW(100), SetH(30));
         EndHor();
         EndHor();
         Space(5);

@@ -161,6 +161,5 @@ public class MainPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

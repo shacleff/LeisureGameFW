@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 
-[Serializable]
+[CreateAssetMenu(menuName = "GameDataAsset")]
 public class GameData : ScriptableObject
 {
     public List<BaseItem> items;
