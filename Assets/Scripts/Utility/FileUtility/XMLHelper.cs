@@ -36,19 +36,6 @@ public class XMLHelper
     }
 
     /// <summary>
-    /// 异步加载xml数据
-    /// </summary>
-    /// <param name="path"></param>
-    /// <param name="_callback">回调函数</param>
-    /// <returns></returns>
-    public IEnumerator WWWLoadXmlTxt(string path,Action<string> _callback)
-    {
-        WWW www = new WWW(path);
-        yield return www;
-        if (_callback != null && www.text != null) _callback(www.text);
-    }
-
-    /// <summary>
     /// 初始化
     /// </summary>
     /// <returns></returns>

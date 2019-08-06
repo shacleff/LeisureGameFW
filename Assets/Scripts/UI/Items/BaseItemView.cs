@@ -35,7 +35,7 @@ public class BaseItemView : MonoBehaviour
         if((GamePlayerPrefs.IsBuyedItem(Index) && (GamePlayerPrefs.GetCurrItem()!=Index))==false)
         {
             Debug.Log("未解锁");
-            TipBox.Instance.ShowMessage("未解锁",0.5f);
+            //TipBox.Instance.ShowMessage("未解锁",0.5f);
         }
         EventManager.Instance.DispatchEvent(ShopEventMsg.UPDATE_ITEM_UI);
         UpdateState();

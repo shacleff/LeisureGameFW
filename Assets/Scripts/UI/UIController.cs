@@ -24,7 +24,7 @@ public class UIController : MonoSingleton<UIController>
     {
         foreach (Transform uiPanel in uiPanelParent)
         {
-            if (uiPanel.gameObject.name != "MainPanel") uiPanel.gameObject.SetActive(false);
+            if (uiPanel.gameObject.name != "MainPanel" && uiPanel.GetComponent<BasePanel>()!=null) uiPanel.gameObject.SetActive(false);
         }
     }
 

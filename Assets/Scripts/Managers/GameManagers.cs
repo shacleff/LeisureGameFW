@@ -20,16 +20,6 @@ public class GameManagers : MonoSingleton<GameManagers>
         this.Coin = CPlayerPrefs.GetInt(PrefKeys.TOTAL_COIN, GlobalProperties.DEFAULT_COIN);
         this.Gem = CPlayerPrefs.GetInt(PrefKeys.TOTAL_GEM, GlobalProperties.DEFAULT_GEM);
 
-        string personalDataJson = CPlayerPrefs.GetString(PrefKeys.GAME_PERSONAL_DATA);
-        Debug.Log("personale: "+personalDataJson);
-        if(personalDataJson=="" || string.IsNullOrEmpty(personalDataJson))
-        {
-            PersonalData p = new PersonalData();
-            p.SetLevel(4);
-            p.SetName("joehuang");
-            
-            //CPlayerPrefs.SetString(PrefKeys.GAME_PERSONAL_DATA, JsonHelper.Serialize(p));
-        }
     }
 
     // Use this for initialization
@@ -43,7 +33,7 @@ public class GameManagers : MonoSingleton<GameManagers>
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void StartGame()
