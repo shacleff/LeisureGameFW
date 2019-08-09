@@ -1,5 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -28,7 +32,11 @@ public class GameManagers : MonoSingleton<GameManagers>
         SoundManager.Instance.Initialized();
 
         gameStatus = GameStatus.IDLE;
+        ProtobufManager.GetInstance().Init();
+
+
     }
+
 
     // Update is called once per frame
     void Update()
