@@ -83,35 +83,35 @@ public class MainPanel : MonoBehaviour
         switch (obj.name)
         {
             case "startBtn":
-                UIController.GetInstance().PlayGame();
+                UIPanelMenu.GetInstance().PlayGame();
                 SoundManager.Instance.PlaySound(0);
                 break;
             case "achievementBtn":
-                UIController.GetInstance().OpenAchievementPanel();
+                UIPanelMenu.GetInstance().OpenAchievementPanel();
                 SoundManager.Instance.PlaySound(1);
                 break;
             case "missionBtn":
-                UIController.GetInstance().OpenMissionPanel();
+                UIPanelMenu.GetInstance().OpenMissionPanel();
                 SoundManager.Instance.PlaySound(2);
                 break;
             case "settingBtn":
-                UIController.GetInstance().OpenSettingPanel();
+                UIPanelMenu.GetInstance().OpenSettingPanel();
                 SoundManager.Instance.PlaySound(3);
                 break;
             case "shopBtn":
-                UIController.GetInstance().OpenShopPanel();
+                UIPanelMenu.GetInstance().OpenShopPanel();
                 break;
             case "bagBtn":
-                UIController.GetInstance().OpenBagPanel();
+                UIPanelMenu.GetInstance().OpenBagPanel();
                 break;
             case "rankBtn":
-                UIController.GetInstance().OpenRankPanel();
+                UIPanelMenu.GetInstance().OpenRankPanel();
                 break;
             case "giftBtn":
-                UIController.GetInstance().OpenGiftPanel();
+                UIPanelMenu.GetInstance().OpenGiftPanel();
                 break;
             case "levelBtn":
-                UIController.GetInstance().OpenLevelPanel();
+                UIPanelMenu.GetInstance().OpenLevelPanel();
                 break;
             default:
                 break;

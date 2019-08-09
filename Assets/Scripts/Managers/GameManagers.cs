@@ -28,10 +28,21 @@ public class GameManagers : MonoSingleton<GameManagers>
         SoundManager.Instance.Initialized();
 
         gameStatus = GameStatus.IDLE;
+
     }
 
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        
+    }
+
+    private void OnApplicationPause(bool pause)
     {
         
     }
