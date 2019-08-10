@@ -12,7 +12,7 @@ public class RefreshScene : Editor
 
     private static readonly string scenePath = "Scenes";
     // 添加菜单选项
-    [MenuItem("Tool/RefreshScene")]
+    [MenuItem("Tools/RefreshScene")]
     static void RefreshAllScene()
     {
         // 设置场景 *.unity 路径

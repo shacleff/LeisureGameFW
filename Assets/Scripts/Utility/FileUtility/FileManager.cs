@@ -459,20 +459,25 @@ namespace FileUtility
         /// </summary>
         /// <param name="txt"></param>
         /// <param name="path"></param>
-        public static void WriteToTxt(string txt,string path)
+        public static void WriteToTxt(string txt,string path, bool isDeleteExist = false)
         {
             try
             {
-                //DeleteFile(path);
+                if (isDeleteExist)
+                {
+                    if (File.Exists(path))
+                    {
+                        File.Delete(path);
+                    }
+                }
                 FileStream fs = new FileStream(path, FileMode.OpenOrCreate);
                 StreamWriter sw = new StreamWriter(fs);
                 sw.WriteLine(txt);
                 sw.Close();
                 fs.Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Log.Info(ex.Message);
             }
         }
 

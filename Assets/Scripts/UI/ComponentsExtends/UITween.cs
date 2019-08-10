@@ -45,6 +45,7 @@ namespace UIExtension
         }
 
         /// <summary>
+        /// 透明渐变
         /// 只支持UGUI Image Component组件
         /// </summary>
         /// <param name="_rect"></param>
