@@ -27,7 +27,7 @@ public class GamingPanel : BasePanel
 
     private void PauseHandler(GameObject go)
     {
-        UIController.GetInstance().OpenPausePanel();
+        UIPanelMenu.GetInstance().OpenPausePanel();
     }
 
     public override void Freeze()

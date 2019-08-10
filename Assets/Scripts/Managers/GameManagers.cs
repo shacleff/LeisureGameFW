@@ -44,6 +44,16 @@ public class GameManagers : MonoSingleton<GameManagers>
         
     }
 
+    private void OnApplicationFocus(bool focus)
+    {
+        
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        
+    }
+
     public void StartGame()
     {
         gameStatus = GameStatus.GAMING;
