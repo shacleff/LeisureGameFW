@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<plugins><plugin name="com.asc.sdk.impl.SimpleDefaultUser" type="1" /><plugin name="com.asc.sdk.impl.SimpleDefaultPay" type="2" /></plugins><plugin name="com.asc.adsdk.impl.SimpleDefaultAd" type="100" /></plugins>
