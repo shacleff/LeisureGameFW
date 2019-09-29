@@ -41,7 +41,7 @@ public class RewardItemView : BaseItemView
     public override void Start()
     {
         base.Start();
-        Sprite _sprite= UIResourceManager.Instance.spriteArr[Index];
+        Sprite _sprite= UIResourceManager.GetInstance().spriteArr[Index];
         ItemImg.sprite = _sprite;
         NameText.text = Index.ToString();
         UpdateState();

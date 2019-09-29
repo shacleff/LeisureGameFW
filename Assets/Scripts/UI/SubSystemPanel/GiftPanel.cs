@@ -8,11 +8,24 @@ using UnityEngine.UI;
 public class GiftPanel : BasePanel
 {
 
-
     public override void Awake()
     {
         base.Awake();
+       
     }
+
+    public override void Start()
+    {
+        base.Start();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+       
+    }
+
+    
 
     public override void Freeze()
     {
@@ -40,16 +53,12 @@ public class GiftPanel : BasePanel
 
     }
 
-
-    public override void Start()
-    {
-        base.Start();
-    }
-    
     protected override void ClosePanelHandle(GameObject go)
     {
         base.ClosePanelHandle(go);
     }
+
+    
 }
 
 

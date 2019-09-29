@@ -36,7 +36,7 @@ public class ShopPanel : BasePanel
 
     private void InitItemView()
     {
-        List<Sprite> itemSprites = UIResourceManager.Instance.spriteArr;
+        List<Sprite> itemSprites = UIResourceManager.GetInstance().spriteArr;
         GameObject obj;
         for (int i = 0; i < itemSprites.Count; i++)
         {

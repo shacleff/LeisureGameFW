@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Timer{
+public class TimerManager
+{
     private static MonoBehaviour behaviour;
     public delegate void Task();
 

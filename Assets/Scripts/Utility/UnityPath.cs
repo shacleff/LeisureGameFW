@@ -24,3 +24,10 @@ public class UnityPath
 
 
 }
+
+public class UIPath
+{
+    public static string OFFLINE_POPUP = "UI/Popups/OfflinePopup";
+
+}
+

@@ -19,7 +19,7 @@ public class GameManagers : MonoSingleton<GameManagers>
         this.IsSound = CPlayerPrefs.GetBool(PrefKeys.SOUND_ON, true);
         this.Coin = CPlayerPrefs.GetInt(PrefKeys.TOTAL_COIN, GlobalProperties.DEFAULT_COIN);
         this.Gem = CPlayerPrefs.GetInt(PrefKeys.TOTAL_GEM, GlobalProperties.DEFAULT_GEM);
-
+        
     }
 
     // Use this for initialization
@@ -28,7 +28,12 @@ public class GameManagers : MonoSingleton<GameManagers>
         SoundManager.Instance.Initialized();
 
         gameStatus = GameStatus.IDLE;
-
+        if(OfflineTime.GetInstance().CheckOffline()>60)
+        {
+            Debug.Log("离线奖励展示================");
+            //UIResourceManager.GetInstance().OpenPopup(PopupType.OfflinePopup);
+        }
+        GiftBagTime.GetInstance().Init();
     }
 
     // Update is called once per frame

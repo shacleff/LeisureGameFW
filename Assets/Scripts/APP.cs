@@ -41,11 +41,8 @@ public class App : MonoSingleton<App>
 
     void Update()
     {
-        //if (this.onUpdate != null)
-        //    this.onUpdate();
-
-      
-
+        if (this.onUpdate != null)
+            this.onUpdate();
     }
     void FixedUpdate()
     {

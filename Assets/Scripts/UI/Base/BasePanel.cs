@@ -45,6 +45,11 @@ public class BasePanel : MonoBehaviour
         this.gameObject.SetActive(false);
     }
 
+    public virtual void Update()
+    {
+
+    }
+
     public virtual void LateUpdate()
     {
 

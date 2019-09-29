@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 249168216}
   - component: {fileID: 249168215}
   - component: {fileID: 249168214}
+  - component: {fileID: 249168217}
   m_Layer: 5
   m_Name: giftBtn
   m_TagString: Untagged
@@ -748,6 +749,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1262319258}
+  - {fileID: 750608250}
   m_Father: {fileID: 1691977014}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -838,6 +840,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249168212}
   m_CullTransparentMesh: 0
+--- !u!114 &249168217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249168212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ec071c6865fa844a65107ab1fc001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeTxt: {fileID: 750608251}
 --- !u!224 &299869845 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4976345692281104860, guid: d64bf0dfde7cf884f8b6c53b24a9c0fc,
@@ -1484,6 +1499,85 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5151176228869541360}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &750608249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 750608250}
+  - component: {fileID: 750608252}
+  - component: {fileID: 750608251}
+  m_Layer: 5
+  m_Name: TimeTxt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &750608250
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750608249}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 249168213}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -139.6}
+  m_SizeDelta: {x: 200, y: 76.3}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &750608251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750608249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 47
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 00:00:00
+--- !u!222 &750608252
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750608249}
+  m_CullTransparentMesh: 0
 --- !u!1 &820938752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,6 +3434,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9b3f89dcb491be4c81cc9caa497084c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RootCanvas: {fileID: 901081292}
+  PopupCanvas: {fileID: 901081292}
   spriteArr:
   - {fileID: 21300000, guid: 8cd18d4655231ae448f4114671648fe7, type: 3}
   - {fileID: 21300000, guid: 1a645ac7db7dea74eb43b8745e9dc71e, type: 3}
@@ -3856,6 +3952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TipBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349395701412886953, guid: ab578b69424e65d42ba95a649d058fc9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1349395701412886952, guid: ab578b69424e65d42ba95a649d058fc9,
         type: 3}
