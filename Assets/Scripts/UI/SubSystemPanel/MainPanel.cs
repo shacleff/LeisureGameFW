@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using Events;
 
 public class MainPanel : MonoBehaviour
@@ -118,48 +119,34 @@ public class MainPanel : MonoBehaviour
         }
     }
 
-    private void PlayGame()
-    {
-        
-    }
-
-    public void OpenAchievementPanel()
-    {
-        
-    }
-
-    public void OpenMissionPanel()
-    {
-        
-    }
-
-    public void OpenSettingPanel()
-    {
-        
-    }
-
-    public void OpenShopPanel()
-    {
-        
-    }
-
-    public void OpenBagPanel()
-    {
-        
-    }
-
-    public void OpenRankPanel()
-    {
-        
-    }
-
-    public void OpenGiftPanel()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { startBtn.GetComponent<Button>() }, 10, true);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { achievementBtn.GetComponent<Button>() }, 10, true);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { missionBtn.GetComponent<Button>() }, 10, true);
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { settingBtn.GetComponent<Button>() }, 10, true);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { rankBtn.GetComponent<Button>() }, 10, true);
+        }
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { giftBtn.GetComponent<Button>() }, 10, true);
+        }
+
     }
 }

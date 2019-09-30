@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Utility;
 
 /// <summary>
@@ -30,6 +31,7 @@ public class UIResourceManager : MonoSingleton<UIResourceManager>
 
     public void OpenPopup(PopupType _popupType)
     {
+        
         GameObject offline;
         if(PopupCanvas.transform.Find("OfflinePopup")!=null)
         {
@@ -40,6 +42,15 @@ public class UIResourceManager : MonoSingleton<UIResourceManager>
             offline = Instantiate(Resources.Load<GameObject>(UIPath.OFFLINE_POPUP), PopupCanvas.transform);
         }
         offline.SetActive(true);
+    }
+
+    //LayoutRebuilder.ForceRebuildLayoutImmediate
+    /// <summary>
+    /// 强制刷新UI，一般用在有用到Layout组件上
+    /// </summary>
+    public void ForceRebuildLayoutImmediate()
+    {
+        LayoutRebuilder.ForceRebuildLayoutImmediate(RootCanvas.GetComponent<RectTransform>());
     }
 
 }

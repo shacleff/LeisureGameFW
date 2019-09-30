@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mmask
-  m_Shader: {fileID: 4800000, guid: 3fe39dc4b41dc1e4daaf9c5c5c4310ed, type: 3}
+  m_Name: UIMask
+  m_Shader: {fileID: 4800000, guid: 2d4a63a909e5980419b22a80dc96db86, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 136142e6f3f2ddb458b80df989219208, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1a645ac7db7dea74eb43b8745e9dc71e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -56,10 +56,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - PixelSnap: 0
     - _BumpScale: 1
     - _ColorMask: 15
-    - _Cutoff: 0.45
+    - _Cutoff: 0.346
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
@@ -83,4 +82,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Parameters: {r: 397, g: 154, b: 148.7, a: 0}
+    - _Parameters: {r: 0, g: 0, b: 0, a: 0}

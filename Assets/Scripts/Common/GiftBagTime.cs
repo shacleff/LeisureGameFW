@@ -32,6 +32,7 @@ public class GiftBagTime:Singleton<GiftBagTime>
         App.GetInstance().onUpdate += UpdateTime;
     }
 
+
     public void UpdateTime()
     {
         timer += Time.deltaTime;
