@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using Game;
+using UnityEngine.Networking;
 
 public class CsvHelper:Singleton<CsvHelper>
 {
@@ -22,18 +23,32 @@ public class CsvHelper:Singleton<CsvHelper>
     }
 
     /// <summary>
+    /// 从Resource文件夹中加载csv文件
+    /// </summary>
+    /// <param name="_path">相对于Resource中的路径</param>
+    /// <param name="directoryDelegate"></param>
+    public void LoadCsvFromResource(string _path, DirectoryDelegate directoryDelegate)
+    {
+        string csvTxt = null;
+        csvTxt = Resources.Load<TextAsset>(_path).ToString();
+        Dictionary<string, List<string>> keyValues = ToDictionary(AnalysisCsvTxt(csvTxt));
+        directoryDelegate(keyValues);
+    }
+
+    /// <summary>
     /// 读取csv数据
     /// </summary>
     /// <param name="_path">完整路径</param>
     /// <param name="directoryDelegate">Dictionary<string,List<string>>数据类型数据</param>
     /// <returns></returns>
-    public IEnumerator StartLoad(string _path,DirectoryDelegate directoryDelegate)
+    private IEnumerator StartLoad(string _path,DirectoryDelegate directoryDelegate)
     {
         string csvTxt = null;
         yield return App.GetInstance().StartCoroutine(LoadTxt(_path, (_txt) => { csvTxt = _txt; }));
         Dictionary<string, List<string>> keyValues = ToDictionary(AnalysisCsvTxt(csvTxt));
         directoryDelegate(keyValues);
     }
+
 
     private string GetPath(string _fileName)
     {
@@ -44,9 +59,10 @@ public class CsvHelper:Singleton<CsvHelper>
 
     private IEnumerator LoadTxt(string _path,Action<string> callback)
     {
-        WWW www = new WWW(_path);
+        UnityWebRequest www = UnityWebRequest.Get(_path);
+        //WWW www = new WWW(_path);
         yield return www;
-        callback(www.text);
+        callback(www.downloadHandler.text);
     }
 
     /// <summary>

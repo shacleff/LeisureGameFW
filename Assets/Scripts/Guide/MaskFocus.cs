@@ -28,7 +28,7 @@ public class MaskFocus : MonoSingleton<MaskFocus>
         {
             UpdateParameters();
         }
-       
+        Deactivate();
     }
 
 
@@ -111,6 +111,7 @@ public class MaskFocus : MonoSingleton<MaskFocus>
     const int borderMargin = 10;
     public void FocusUI(IEnumerable<UIBehaviour> uis, float radiusMultiplier = 1f, bool instant = false)
     {
+        
         if (uis == null)
             return;
 

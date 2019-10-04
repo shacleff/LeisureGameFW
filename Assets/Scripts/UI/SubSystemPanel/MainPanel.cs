@@ -125,28 +125,31 @@ public class MainPanel : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { startBtn.GetComponent<Button>() }, 10, true);
+            GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { startBtn.GetComponent<Button>() }, 1, true);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { achievementBtn.GetComponent<Button>() }, 10, true);
+            GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { achievementBtn.GetComponent<Button>() }, 1, true);
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
-            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { missionBtn.GetComponent<Button>() }, 10, true);
+            GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { missionBtn.GetComponent<Button>() }, 1, true);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { settingBtn.GetComponent<Button>() }, 10, true);
+            GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { settingBtn.GetComponent<Button>() }, 1, true);
         }
         if (Input.GetKeyDown(KeyCode.T))
         {
-            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { rankBtn.GetComponent<Button>() }, 10, true);
+            GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { rankBtn.GetComponent<Button>() }, 1, true);
         }
         if (Input.GetKeyDown(KeyCode.Y))
         {
-            MaskFocus.GetInstance().FocusUI(new UIBehaviour[] { giftBtn.GetComponent<Button>() }, 10, true);
+            GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { giftBtn.GetComponent<Button>() }, 1, true);
         }
-
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            GuideSystem.GetInstance().maskFocus.Deactivate();
+        }
     }
 }

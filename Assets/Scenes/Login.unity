@@ -612,7 +612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &217581526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0810c26879d017d4587076b9c15b254e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1451043268}
+  cam: {fileID: 1320798935}
 --- !u!1001 &237092051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3588,6 +3588,7 @@ GameObject:
   - component: {fileID: 1759057539}
   - component: {fileID: 1759057540}
   - component: {fileID: 1759057541}
+  - component: {fileID: 1759057542}
   m_Layer: 0
   m_Name: APP
   m_TagString: Untagged
@@ -3621,7 +3622,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdeb5420533f5fe4f88a74a2859113c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMode: 1
 --- !u!114 &1759057540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3679,6 +3679,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 183f1282abd49024a8a4a6305f0a50c4, type: 3}
   - {fileID: 21300000, guid: e080b8ca6aaae5c41b7bfd56aafb3d7b, type: 3}
   - {fileID: 21300000, guid: 81f0428b59b084b4591b8d2307d6d67f, type: 3}
+--- !u!114 &1759057542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759057537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 579af2eb73a206749a671545e95fffd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maskFocus: {fileID: 217581530}
 --- !u!224 &1788566357 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3680033515097097113, guid: 4272ba23bc1428e4695938074c57d1d5,
