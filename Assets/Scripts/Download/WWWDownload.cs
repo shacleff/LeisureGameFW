@@ -14,7 +14,7 @@ public class WWWDownload:Singleton<WWWDownload>
     /// <param name="_path">路径</param>
     public void Download(string _path)
     {
-         App.GetInstance().StartCoroutine(StartDownload(_path));
+         APP.GetInstance().StartCoroutine(StartDownload(_path));
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ public class WWWDownload:Singleton<WWWDownload>
     /// <param name="completeCallback">加载完成委托</param>
     public void Download(string _path,Action<string> completeCallback)
     {
-        App.GetInstance().StartCoroutine(StartDownload(_path, completeCallback));
+        APP.GetInstance().StartCoroutine(StartDownload(_path, completeCallback));
     }
 
     /// <summary>
@@ -36,7 +36,7 @@ public class WWWDownload:Singleton<WWWDownload>
     /// <param name="CompleteCallback">加载完成委托</param>
     public void Download(string _path,Action<object> CompleteCallback)
     {
-        App.GetInstance().StartCoroutine(StartDownload(_path,CompleteCallback));
+        APP.GetInstance().StartCoroutine(StartDownload(_path,CompleteCallback));
     }
 
     #region Asyc Download 

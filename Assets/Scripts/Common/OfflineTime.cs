@@ -11,7 +11,7 @@ public class OfflineTime:Singleton<OfflineTime>
     public double OfflineDuration { get; set; }
 
     private OfflineTime() {
-        App.GetInstance().onUpdate += UpdateTime;
+        APP.GetInstance().onUpdate += UpdateTime;
     }
 
     public double CheckOffline()

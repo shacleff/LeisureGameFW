@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class App : MonoSingleton<App>
+public class APP : MonoSingleton<APP>
 {
     public enum GameMode
     {
@@ -22,7 +22,7 @@ public class App : MonoSingleton<App>
     public event LifeCircleCallback onDestroy = null;
     public event LifeCircleCallback onApplicationQuit = null;
 
-    private App() { }
+    private APP() { }
 
 
     void Awake()

@@ -19,7 +19,7 @@ public class CsvHelper:Singleton<CsvHelper>
     /// <param name="directoryDelegate">Dictionary<string,List<string>>数据类型数据</param>
 	public void LoadCsv(string _path,DirectoryDelegate directoryDelegate)
     {
-        App.GetInstance().StartCoroutine(StartLoad(_path, directoryDelegate));
+        APP.GetInstance().StartCoroutine(StartLoad(_path, directoryDelegate));
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ public class CsvHelper:Singleton<CsvHelper>
     private IEnumerator StartLoad(string _path,DirectoryDelegate directoryDelegate)
     {
         string csvTxt = null;
-        yield return App.GetInstance().StartCoroutine(LoadTxt(_path, (_txt) => { csvTxt = _txt; }));
+        yield return APP.GetInstance().StartCoroutine(LoadTxt(_path, (_txt) => { csvTxt = _txt; }));
         Dictionary<string, List<string>> keyValues = ToDictionary(AnalysisCsvTxt(csvTxt));
         directoryDelegate(keyValues);
     }

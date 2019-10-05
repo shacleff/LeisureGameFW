@@ -29,7 +29,7 @@ public class GiftBagTime:Singleton<GiftBagTime>
         {
             lastTime = JsonHelper.Deserialize<DateTime>(PlayerPrefs.GetString(GIFT_TIME));
         }
-        App.GetInstance().onUpdate += UpdateTime;
+        APP.GetInstance().onUpdate += UpdateTime;
     }
 
 

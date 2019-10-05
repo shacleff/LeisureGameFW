@@ -13,7 +13,7 @@ public class TimerManager:Singleton<TimerManager>
 
     public void Init()
     {
-        App.GetInstance().onUpdate += OnUpdateTime;
+        APP.GetInstance().onUpdate += OnUpdateTime;
     }
 
     private void OnUpdateTime()
