@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+/// <summary>
+/// 所有弹窗应该由一个类统一管理弹出，这样不会造成多个弹窗出现由此带来的不必要的冲突
+/// </summary>
 public class OfflinePopup : BasePopup
 {
     public GameObject CollectBtn;
@@ -15,6 +18,7 @@ public class OfflinePopup : BasePopup
     public override void Awake()
     {
         base.Awake();
+        this.popupType = PopupType.OfflinePopup;
     }
 
 
@@ -40,6 +44,11 @@ public class OfflinePopup : BasePopup
         base.OnEnable();
         TimerTxt.text = DateTimeUtility.TimeString(OfflineTime.GetInstance().OfflineDuration, DateTimeUtility.TimeFormat.M_S);
         //TimerTxt.text=""
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
     }
 
     public override void Exit()

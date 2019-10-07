@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 暂时用不到
+/// </summary>
 public class UIPanelConfig : MonoBehaviour
 {
     public List<GameObject> UIBasePanels = new List<GameObject>();

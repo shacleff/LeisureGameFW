@@ -27,7 +27,9 @@ public class UnityPath
 
 public class UIPath
 {
-    public static string OFFLINE_POPUP = "UI/Popups/OfflinePopup";
+    public static string OFFLINE_POPUP = "UI/Popups/"+UIPrefabName.OFFLINE_POPUP;
+    public static string GIFT_BAG_POPUP = "UI/Popups/" + UIPrefabName.GIFT_BAG_POPUP;
+    public static string CHECK_IN_POPUP = "UI/Popups/" + UIPrefabName.CHECK_IN_POPUP;
 
 }
 

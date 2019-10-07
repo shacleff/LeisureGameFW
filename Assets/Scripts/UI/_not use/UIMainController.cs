@@ -6,6 +6,7 @@ using Utility;
 using FlipGun;
 
 /// <summary>
+/// 暂时用不到
 /// UI窗体管理器脚本（框架核心脚本）
 /// </summary>
 public class UIMainController

@@ -8,6 +8,17 @@
 public enum PopupType
 {
     Base,
+    /// <summary>
+    /// 离线奖励
+    /// </summary>
     OfflinePopup,
+    // <summary>
+    /// 签到
+    /// </summary>
+    CheckIn,
+    // <summary>
+    /// 礼包
+    /// </summary>
+    GiftBag,
     Dialog
 }
