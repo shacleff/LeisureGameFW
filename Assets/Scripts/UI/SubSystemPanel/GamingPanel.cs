@@ -30,15 +30,6 @@ public class GamingPanel : BasePanel
         UIPanelMenu.GetInstance().OpenPausePanel();
     }
 
-    public override void Freeze()
-    {
-        base.Freeze();
-    }
-
-    public override void Hide()
-    {
-        base.Hide();
-    }
 
     private void OnApplicationPause(bool pause)
     {
@@ -54,7 +45,7 @@ public class GamingPanel : BasePanel
        
     }
 
-    private void Update()
+    override public void Update()
     {
         if (!isPause)
         {

@@ -55,42 +55,15 @@ public class BasePanel : MonoBehaviour
 
     }
 
-    #region 面板4种状态
-
-    /// <summary>
-    /// 显示面板
-    /// </summary>
-    public virtual void Show()
+    public virtual void OnEnter()
     {
-        gameObject.SetActive(true);
 
     }
 
-    /// <summary>
-    /// 隐藏面板
-    /// </summary>
-    public virtual void Hide()
+    public virtual void OnExit()
     {
-        gameObject.SetActive(false);
-    }
 
-    /// <summary>
-    /// 重新显示面板
-    /// </summary>
-    public virtual void ReShow()
-    {
-        gameObject.SetActive(true);
     }
-
-    /// <summary>
-    /// 冻结状态
-    /// </summary>
-    public virtual void Freeze()
-    {
-        gameObject.SetActive(true);
-    }
-
-    #endregion
 
     protected void Clear()
     {

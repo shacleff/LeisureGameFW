@@ -53,36 +53,7 @@ public class GameOverPanel : BasePanel
 
     }
 
-    public override void Show()
-    {
 
-    }
-
-
-
-    public override void Freeze()
-    {
-        base.Freeze();
-    }
-
-    public override void Hide()
-    {
-        base.Hide();
-
-    }
-
-    public override void ReShow()
-    {
-        base.ReShow();
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }
 
 

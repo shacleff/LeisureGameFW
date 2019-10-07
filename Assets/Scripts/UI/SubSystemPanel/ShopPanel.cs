@@ -75,28 +75,6 @@ public class ShopPanel : BasePanel
     }
 
 
-    public override void Freeze()
-    {
-        base.Freeze();
-    }
-
-    public override void Hide()
-    {
-        base.Hide();
-    }
-
-    public override void ReShow()
-    {
-        base.ReShow();
-    }
-
-    public override void Show()
-    {
-        base.Show();
-        
-    }
-    
-
     protected override void ClosePanelHandle(GameObject go)
     {
         base.ClosePanelHandle(go);

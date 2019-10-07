@@ -25,31 +25,11 @@ public class AchievementPanel : BasePanel
         return base.Equals(other);
     }
 
-    public override void Freeze()
-    {
-        base.Freeze();
-    }
-
     public override int GetHashCode()
     {
         return base.GetHashCode();
     }
 
-    public override void Hide()
-    {
-        base.Hide();
-    }
-
-    public override void ReShow()
-    {
-        base.ReShow();
-    }
-
-    public override void Show()
-    {
-        base.Show();
-
-    }
 
     
     private void AchievementPanel_onClick(GameObject go)
@@ -69,10 +49,7 @@ public class AchievementPanel : BasePanel
 
 
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    
 }
 
 
