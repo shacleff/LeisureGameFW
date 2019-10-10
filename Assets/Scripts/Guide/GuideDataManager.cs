@@ -53,7 +53,7 @@ public class GuideDataManager:Singleton<GuideDataManager>
         }
         for (int i = 0; i < guideDatas.Count; i++)
         {
-            Debug.Log(guideDatas[i]);
+            //Debug.Log(guideDatas[i]);
         }
     }
 }

@@ -29,12 +29,44 @@ public class CheckInManager : MonoSingleton<CheckInManager>
         //string _hadDayStr= PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
         LastDate = lastDateStr == "" ? DateTimeUtility.Now() :JsonHelper.Deserialize<DateTime>(lastDateStr);
         hadDays= int.Parse(PlayerPrefs.GetString(LOGIN_DAY_COUNT, "0"));
+
+        DateTime lastTime24Hour = new DateTime(LastDate.Year, LastDate.Month, LastDate.Day, 23, 59, 59);
+        TimeSpan _timeSpan = lastTime24Hour.Subtract(LastDate);
+        Debug.Log(_timeSpan);
     }
 
-    public void CheckIn()
+    /// <summary>
+    /// 检查每日签到，需要一直连续的
+    /// </summary>
+    public void CheckInContinuous()
     {
         EventManager.Instance.DispatchEvent(CHECK_IN_INFO, DaySprites);
         //UIResourceManager.GetInstance().OpenCheckInPopup(DaySprites);
+    }
+
+    private int diffDay = 1;
+    private int DiffHour = 1;
+    /// <summary>
+    /// 检查每日签到，不需要一直连续的
+    /// </summary>
+    public void CheckInCanDisConnect()
+    {
+
+        DateTime now = DateTimeUtility.Now();
+        TimeSpan _timeSpan = LastDate.Subtract(now);
+        DateTime lastTime24Hour = new DateTime(LastDate.Year, LastDate.Month, LastDate.Day, 23, 59, 59);
+        if(_timeSpan.TotalSeconds>1)
+        {
+            
+            if(_timeSpan.TotalDays>=30)
+            {
+
+            }
+            else if(_timeSpan.TotalHours>=12)
+            {
+
+            }
+        }
     }
 
     // Update is called once per frame
@@ -42,7 +74,7 @@ public class CheckInManager : MonoSingleton<CheckInManager>
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            CheckIn();
+            CheckInContinuous();
         }
     }
 }
