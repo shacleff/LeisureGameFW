@@ -4,15 +4,24 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+
+
 /// <summary>
 /// 每日签到系统
+/// 流程：
+/// 1、主界面加载完成后，初始化签到管理类
+/// 2、打开签到界面，发所有签到信息给总管理类，总管理类再发给签到界面
+/// 2、发改天签到的天数给签到界面
 /// </summary>
-public class CheckInManager : MonoSingleton<CheckInManager>
+public class CheckInManager : MonoSingleton<CheckInManager>,IManager
 {
+    public static string CHECK_IN_INFO_EVENT = "check_in_info_event";
+    public static string CHECK_IN_VERIFY_EVENT = "check_in_verify_event";
     public static string CHECK_IN_INFO = "checkin_info";
     public static string LOGIN_DAY_COUNT = "login_day_count";
     public static string LAST_LOGIN_DATE = "last_login_date";
     public Sprite[] DaySprites;
+    public List<CheckInItem> datas;
     private DateTime LastDate;
     /// <summary>
     /// 已经登录的天数
@@ -25,14 +34,19 @@ public class CheckInManager : MonoSingleton<CheckInManager>
     // Start is called before the first frame update
     void Start()
     {
-        string lastDateStr=PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
-        //string _hadDayStr= PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
-        LastDate = lastDateStr == "" ? DateTimeUtility.Now() :JsonHelper.Deserialize<DateTime>(lastDateStr);
-        hadDays= int.Parse(PlayerPrefs.GetString(LOGIN_DAY_COUNT, "0"));
+        
+    }
 
-        DateTime lastTime24Hour = new DateTime(LastDate.Year, LastDate.Month, LastDate.Day, 23, 59, 59);
-        TimeSpan _timeSpan = lastTime24Hour.Subtract(LastDate);
-        Debug.Log(_timeSpan);
+    public void Init()
+    {
+        string lastDateStr = PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
+        //string _hadDayStr= PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
+        LastDate = lastDateStr == "" ? DateTimeUtility.Now() : JsonHelper.Deserialize<DateTime>(lastDateStr);
+        hadDays = PlayerPrefs.GetInt(LOGIN_DAY_COUNT, 0);
+
+        EventManager.Instance.AddEventListener(CHECK_IN_VERIFY_EVENT, Save);
+        EventManager.Instance.DispatchEvent(CHECK_IN_INFO, datas);
+        CheckInCanDisConnect();
     }
 
     /// <summary>
@@ -40,7 +54,7 @@ public class CheckInManager : MonoSingleton<CheckInManager>
     /// </summary>
     public void CheckInContinuous()
     {
-        EventManager.Instance.DispatchEvent(CHECK_IN_INFO, DaySprites);
+        EventManager.Instance.DispatchEvent(CHECK_IN_INFO, datas);
         //UIResourceManager.GetInstance().OpenCheckInPopup(DaySprites);
     }
 
@@ -53,20 +67,24 @@ public class CheckInManager : MonoSingleton<CheckInManager>
     {
 
         DateTime now = DateTimeUtility.Now();
-        TimeSpan _timeSpan = LastDate.Subtract(now);
         DateTime lastTime24Hour = new DateTime(LastDate.Year, LastDate.Month, LastDate.Day, 23, 59, 59);
-        if(_timeSpan.TotalSeconds>1)
+        TimeSpan _timeSpan = now.Subtract(lastTime24Hour);
+        if (_timeSpan.TotalSeconds>10)
         {
-            
-            if(_timeSpan.TotalDays>=30)
+            hadDays++;
+            Debug.LogFormat("新的一天。。。。。。。。。。第{0}天", hadDays);
+            if(hadDays >= 7)
             {
-
+                hadDays = 0;
             }
-            else if(_timeSpan.TotalHours>=12)
-            {
-
-            }
+            EventManager.Instance.DispatchEvent(CHECK_IN_INFO_EVENT,hadDays);
         }
+    }
+
+    public void Save(object param)
+    {
+        PlayerPrefs.SetString(LAST_LOGIN_DATE, JsonHelper.Serialize(DateTimeUtility.Now()));
+        PlayerPrefs.SetInt(LOGIN_DAY_COUNT, hadDays);
     }
 
     // Update is called once per frame
@@ -77,4 +95,17 @@ public class CheckInManager : MonoSingleton<CheckInManager>
             CheckInContinuous();
         }
     }
+
+    
 }
+
+[Serializable]
+public class CheckInItem
+{
+
+    public int id;
+    public string name;
+    public Sprite sprite;
+    public string desc;
+}
+

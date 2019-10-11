@@ -9,10 +9,10 @@ using Events;
 public class MainPanel : MonoBehaviour
 {
     [HideInInspector]
-    public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn,levelBtn;
+    public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn, levelBtn;
 
     [HideInInspector]
-    public bool StartBtnSwitch=true;
+    public bool StartBtnSwitch = true;
     [HideInInspector]
     public bool achievementBtnSwitch = true;
     [HideInInspector]
@@ -76,7 +76,7 @@ public class MainPanel : MonoBehaviour
         bagBtn.SetActive(bagBtnSwitch);
         rankBtn.SetActive(rankBtnSwitch);
         giftBtn.SetActive(giftBtnSwitch);
-        
+
     }
 
     public void OpenPanelBtnHandler(GameObject obj)
@@ -123,7 +123,7 @@ public class MainPanel : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { startBtn.GetComponent<Button>() }, 1, true);
         }
@@ -147,9 +147,12 @@ public class MainPanel : MonoBehaviour
         {
             GuideSystem.GetInstance().FocusUI(new UIBehaviour[] { giftBtn.GetComponent<Button>() }, 1, true);
         }
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             GuideSystem.GetInstance().maskFocus.Deactivate();
         }
+
     }
 }
+
+
