@@ -118,6 +118,42 @@ namespace UIExtension
             if (_rect.GetComponent<RectTransform>() == null) Debug.LogError(string.Format("the GameObject {0} Component is null", _rect.name));
             return _rect.GetComponent<RectTransform>().DOLocalRotate(_v2, _duration).SetEase(Ease.InOutCirc).OnComplete(() => { _callback?.Invoke(); });
         }
+
+        /// <summary>
+        /// 震动效果
+        /// 缩放的同时旋转UI
+        /// </summary>
+        /// <param name="obj"></param>
+        public static void Snake(this GameObject obj)
+        {
+            DOTween.KillAll();
+            TimerManager.StopCoroutine();
+            //TimerManager.Instance.StopAllCoroutines();
+            if (obj == null)
+            {
+               // DelayTimer.Instance.StopAllCoroutines();
+                return;
+            }
+            obj.transform.localScale = Vector3.one;
+
+            obj.transform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), 1.0f / 12.0f).OnComplete(() => {
+
+                TimerManager.Schedule(1.0f / 12.0f, () =>
+                {
+                    if (obj != null) obj.transform.DOScale(Vector3.one, 1.0f / 12.0f);
+                });
+            });
+            obj.transform.DOLocalRotate(new Vector3(0, 0, -6), 1.0f / 12.0f).OnComplete(() => {
+                obj.transform.DOLocalRotate(new Vector3(0, 0, 6), 1.0f / 12.0f).OnComplete(() => {
+                    obj.transform.DOLocalRotate(new Vector3(0, 0, 0), 1.0f / 12.0f).OnComplete(() => {
+                        TimerManager.Schedule(1.5f, () =>
+                        {
+                            if (obj != null) obj.Snake();
+                        });
+                    });
+                });
+            });
+        }
     }
 
 }

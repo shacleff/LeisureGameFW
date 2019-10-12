@@ -21,10 +21,20 @@ public class TimerManager:Singleton<TimerManager>
         
     }
 
+    public static void StopCoroutine()
+    {
+        APP.GetInstance().StopAllCoroutines();
+    }
+
+    public static Coroutine Schedule(float delay, Task task)
+    {
+        return APP.GetInstance().StartCoroutine(DoTask(task, delay));
+    }
+
     public static void Schedule(MonoBehaviour _behaviour, float delay, Task task)
     {
         behaviour = _behaviour;
-        behaviour.StartCoroutine(DoTask(task, delay));
+        APP.GetInstance().StartCoroutine(DoTask(task, delay));
     }
 
     private static IEnumerator DoTask(Task task, float delay)
