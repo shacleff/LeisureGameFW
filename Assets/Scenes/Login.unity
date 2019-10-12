@@ -2975,6 +2975,35 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5aba0d9d2258be3449430e747e02e471, type: 3}
   - {fileID: 21300000, guid: 5fb03ffc0f661b4489f665a366197467, type: 3}
   - {fileID: 21300000, guid: e6d4f9c0844b3cc46bcb8ffd0f59f6ae, type: 3}
+  datas:
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
+  - id: 0
+    name: 
+    sprite: {fileID: 0}
+    desc: 
 --- !u!1 &1447956145
 GameObject:
   m_ObjectHideFlags: 0
