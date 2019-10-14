@@ -74,12 +74,12 @@ public class AdManager : MonoSingleton<AdManager>
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            Debug.Log("打点——自定义事件: " + eventName);
+            Log("打点——自定义事件: " + eventName);
             ASCSDKInterface.Instance.UserCustomEvent(eventName);
         }
         else if (Application.platform == RuntimePlatform.WindowsEditor)
         {
-            Debug.Log("打点——自定义事件: " + eventName);
+            Log("打点——自定义事件: " + eventName);
         }
         else
         {
@@ -91,12 +91,12 @@ public class AdManager : MonoSingleton<AdManager>
     {
         if(Application.platform==RuntimePlatform.Android)
         {
-            Debug.Log(message);
+            AdvertisingLog.Log(message);
             ASCSDKInterface.Instance.NativeLog(message);
         }
         else
         {
-            Debug.Log(message);
+            AdvertisingLog.Log(message);
         }
     }
 
@@ -109,6 +109,24 @@ public class AdManager : MonoSingleton<AdManager>
         }
     }
 }
+
+/// <summary>
+/// 一个广告专用的log日志管理类
+/// </summary>
+public class AdvertisingLog
+{
+
+    public static void Log(string format,params object[] args)
+    {
+        Debug.LogFormat("game ad log:"+format, args);
+    }
+
+    public static void LogError(string format, params object[] args)
+    {
+        Debug.LogFormat(format, args);
+    }
+}
+
 
 public enum ShowResult
 {
