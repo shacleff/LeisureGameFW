@@ -9,7 +9,10 @@ using UnityEngine;
 public class CheckInPopup : BasePopup
 {
     public GameObject daysParent;
-
+    /// <summary>
+    /// 签到信息（内容，奖励）
+    /// </summary>
+    private object _dayDatas;
 
     public override void Awake()
     {
@@ -29,6 +32,7 @@ public class CheckInPopup : BasePopup
     public override void Enter()
     {
         base.Enter();
+
     }
 
     public override void Exit()

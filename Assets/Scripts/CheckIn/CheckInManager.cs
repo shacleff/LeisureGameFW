@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 
 
+public delegate void CheckInDataRequest();
 
 /// <summary>
 /// 每日签到系统
@@ -24,7 +25,7 @@ public class CheckInManager : MonoSingleton<CheckInManager>,IManager
     public List<CheckInItem> datas;
     private DateTime LastDate;
     /// <summary>
-    /// 已经登录的天数
+    /// 已经登录的天数,获取的数为-1的话，就说明游戏第一次登陆
     /// </summary>
     private int hadDays;
 
@@ -42,11 +43,18 @@ public class CheckInManager : MonoSingleton<CheckInManager>,IManager
         string lastDateStr = PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
         //string _hadDayStr= PlayerPrefs.GetString(LAST_LOGIN_DATE, "");
         LastDate = lastDateStr == "" ? DateTimeUtility.Now() : JsonHelper.Deserialize<DateTime>(lastDateStr);
-        hadDays = PlayerPrefs.GetInt(LOGIN_DAY_COUNT, 0);
+        hadDays = PlayerPrefs.GetInt(LOGIN_DAY_COUNT, -1);
+        if(hadDays==-1)
+        {
 
+        }
+        else
+        {
+            CheckInCanDisConnect();
+        }
         EventManager.Instance.AddEventListener(CHECK_IN_VERIFY_EVENT, Save);
         EventManager.Instance.DispatchEvent(CHECK_IN_INFO, datas);
-        CheckInCanDisConnect();
+        
     }
 
     /// <summary>
