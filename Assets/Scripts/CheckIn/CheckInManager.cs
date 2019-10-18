@@ -22,12 +22,16 @@ public class CheckInManager : MonoSingleton<CheckInManager>,IManager
     public static string LOGIN_DAY_COUNT = "login_day_count";
     public static string LAST_LOGIN_DATE = "last_login_date";
     public Sprite[] DaySprites;
-    public List<CheckInItem> datas;
+    //public List<CheckInItem> datas;
     private DateTime LastDate;
     /// <summary>
     /// 已经登录的天数,获取的数为-1的话，就说明游戏第一次登陆
     /// </summary>
     private int hadDays;
+    /// <summary>
+    /// 
+    /// </summary>
+    public List<CheckInItem> datas;
 
     private CheckInManager() { }
 
@@ -52,9 +56,12 @@ public class CheckInManager : MonoSingleton<CheckInManager>,IManager
         {
             CheckInCanDisConnect();
         }
-        EventManager.Instance.AddEventListener(CHECK_IN_VERIFY_EVENT, Save);
-        EventManager.Instance.DispatchEvent(CHECK_IN_INFO, datas);
         
+    }
+
+    public void OpenPopup()
+    {
+        EventManager.Instance.DispatchEvent(PopupEvent.OPEN_POPUP, new PopupEvent(PopupEvent.OPEN_POPUP, PopupType.CheckIn, datas,UIPath.CHECK_IN_POPUP));
     }
 
     /// <summary>
@@ -66,8 +73,6 @@ public class CheckInManager : MonoSingleton<CheckInManager>,IManager
         //UIResourceManager.GetInstance().OpenCheckInPopup(DaySprites);
     }
 
-    private int diffDay = 1;
-    private int DiffHour = 1;
     /// <summary>
     /// 检查每日签到，不需要一直连续的
     /// </summary>
@@ -114,6 +119,7 @@ public class CheckInItem
     public int id;
     public string name;
     public Sprite sprite;
+    public bool isActive;
     public string desc;
 }
 

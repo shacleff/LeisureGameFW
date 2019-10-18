@@ -414,6 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupType: 2
+  Priority: 2
   daysParent: {fileID: 135937276601315003}
 --- !u!1 &1432323010971483990
 GameObject:

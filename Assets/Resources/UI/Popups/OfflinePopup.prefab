@@ -651,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupType: 0
+  Priority: 1
   CollectBtn: {fileID: 2645387477260604237}
   CloseBtn: {fileID: 2645387477590787855}
   CoinTxt: {fileID: 2645387479192081235}

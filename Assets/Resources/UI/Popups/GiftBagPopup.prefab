@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupType: 3
+  Priority: 0
 --- !u!1 &131183770767816329
 GameObject:
   m_ObjectHideFlags: 0

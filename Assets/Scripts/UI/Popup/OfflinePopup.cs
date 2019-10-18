@@ -46,9 +46,13 @@ public class OfflinePopup : BasePopup
         //TimerTxt.text=""
     }
 
-    public override void Enter()
+    /// <summary>
+    /// 进入弹窗，并传入/更新弹窗信息
+    /// </summary>
+    /// <param name="_data"></param>
+    public override void Enter(object _data = null)
     {
-        base.Enter();
+        base.Enter(_data);
     }
 
     public override void Exit()

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +26,8 @@ public class UIResourceManager : MonoSingleton<UIResourceManager>
 
     void Start()
     {
-        EventManager.Instance.AddEventListener(CheckInManager.CHECK_IN_INFO, OpenCheckInPopup);
+        //EventManager.Instance.AddEventListener(CheckInManager.CHECK_IN_INFO, OpenCheckInPopup);.
+        EventManager.Instance.AddEventListener(PopupEvent.OPEN_POPUP, OpenPopup);
     }
 
     void Update()
@@ -33,73 +35,47 @@ public class UIResourceManager : MonoSingleton<UIResourceManager>
 
     }
 
-    public void OpenPopup(PopupType _type,string _popupPrefabPath)
+    public void OpenPopup(object _info)
+    {
+        PopupEvent popupEvent = (PopupEvent)_info;
+        OpenPopup(popupEvent.popupType, popupEvent.PopupPrefabPath, popupEvent.Datas);
+    }
+
+    public void OpenPopup(PopupType _type,string _popupPrefabPath,object _data)
     {
         CheckPopup(_type);
         if (popupList.Find(o => o.popupType == _type) != null)
         {
-            popupList.Find(o => o.popupType == _type).Enter();
+            popupList.Find(o => o.popupType == _type).Enter(_data);
         }
         else
         {
             GameObject obj;
             obj = Instantiate(Resources.Load<GameObject>(_popupPrefabPath), PopupCanvas.transform);
-            obj.GetComponent<BasePopup>().Enter();
+            obj.GetComponent<BasePopup>().Enter(_data);
             popupList.Add(obj.GetComponent<BasePopup>());
         }
     }
 
-    public void OpenOfflinePopup()
-    {
-        CheckPopup(PopupType.OfflinePopup);
-        if (popupList.Find(o => o.popupType == PopupType.OfflinePopup) != null)
-        {
-            popupList.Find(o => o.popupType == PopupType.OfflinePopup).Enter();
-        }
-        else
-        {
-            OffineObj = Instantiate(Resources.Load<GameObject>(UIPath.OFFLINE_POPUP), PopupCanvas.transform);
-            OffineObj.GetComponent<OfflinePopup>().Enter();
-            popupList.Add(OffineObj.GetComponent<OfflinePopup>());
-        }
-    }
-
-    public void OpenGiftBagPopup()
-    {
-        CheckPopup(PopupType.GiftBag);
-        if (popupList.Find(o => o.popupType == PopupType.GiftBag) != null)
-        {
-            popupList.Find(o => o.popupType == PopupType.GiftBag).Enter();
-        }
-        else
-        {
-            GiftBagObj = Instantiate(Resources.Load<GameObject>(UIPath.GIFT_BAG_POPUP), PopupCanvas.transform);
-            GiftBagObj.GetComponent<GiftPopup>().Enter();
-            popupList.Add(GiftBagObj.GetComponent<GiftPopup>());
-        }
-    }
-
-    public void OpenCheckInPopup(object _info)
-    {
-        CheckPopup(PopupType.CheckIn);
-
-        Sprite[] _daySprites = (Sprite[])_info;
-        if (popupList.Find(o => o.popupType == PopupType.CheckIn) != null)
-        {
-            popupList.Find(o => o.popupType == PopupType.CheckIn).Enter();
-        }
-        else
-        {
-            CheckInObj = Instantiate(Resources.Load<GameObject>(UIPath.CHECK_IN_POPUP), PopupCanvas.transform);
-            CheckInObj.GetComponent<CheckInPopup>().Enter();
-            popupList.Add(CheckInObj.GetComponent<CheckInPopup>());
-        }
-        
-    }
-
+    /// <summary>
+    /// 弹窗同时出现的时候，隐藏除目标外的其他所有弹窗
+    /// </summary>
+    /// <param name="_popupType"></param>
     public void CheckPopup(PopupType _popupType)
     {
         popupList.FindAll(o => o.popupType != _popupType).ForEach((_popup)=> { _popup.Exit(); });
+    }
+
+    /// <summary>
+    /// 弹窗同时出现的时候，按照优先级排序
+    /// </summary>
+    public void OrderPopupUI()
+    {
+        popupList=popupList.OrderBy(o => o.Priority).ToList();
+        for (int i = 0; i < popupList.Count; i++)
+        {
+            popupList[i].transform.SetAsLastSibling();
+        }
     }
 
     //LayoutRebuilder.ForceRebuildLayoutImmediate

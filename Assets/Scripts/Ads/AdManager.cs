@@ -4,6 +4,31 @@ using System.Collections;
 
 public class AdManager : MonoSingleton<AdManager>
 {
+    public bool IsInterFlag
+    {
+        get
+        {
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                return ASCSDKInterface.Instance.GetIntersFlag();
+            }
+            else
+                return UnityEngine.Random.value <= 0.5f ? true : false;
+
+        }
+    }
+    public bool IsVideoFlag
+    {
+        get
+        {
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                return ASCSDKInterface.Instance.GetVideoFlag();
+            }
+            else
+                return true;
+        }
+    }
 
     private void Awake()
     {
@@ -18,8 +43,7 @@ public class AdManager : MonoSingleton<AdManager>
 
     public void ShowRewardedAds(Action<ShowResult> resultHandler)
     {
-        bool isVideoReady = true;
-        if (isVideoReady)
+        if (IsVideoFlag)
         {
             if (Application.platform == RuntimePlatform.WindowsEditor)
             {
@@ -64,6 +88,26 @@ public class AdManager : MonoSingleton<AdManager>
         {
         }
 
+    }
+
+    public void ShowInter()
+    {
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (ASCSDKInterface.Instance.GetIntersFlag())
+            {
+                Log("show inter success...");
+                ASCSDKInterface.Instance.ShowInters();
+            }
+            else
+            {
+                Log("show inter is fail... the flag is false");
+            }
+        }
+        else
+        {
+            Log("pc show inter ");
+        }
     }
 
     /// <summary>

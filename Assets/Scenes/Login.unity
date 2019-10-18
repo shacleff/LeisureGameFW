@@ -205,6 +205,41 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 7494874756096674125}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &59096965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 59096966}
+  m_Layer: 5
+  m_Name: PopupUIs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &59096966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59096965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 901081296}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &82357773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,6 +1948,7 @@ RectTransform:
   - {fileID: 2019425906}
   - {fileID: 434000290}
   - {fileID: 217581526}
+  - {fileID: 59096966}
   - {fileID: 956764475}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -2975,35 +3011,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5aba0d9d2258be3449430e747e02e471, type: 3}
   - {fileID: 21300000, guid: 5fb03ffc0f661b4489f665a366197467, type: 3}
   - {fileID: 21300000, guid: e6d4f9c0844b3cc46bcb8ffd0f59f6ae, type: 3}
-  datas:
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
-  - id: 0
-    name: 
-    sprite: {fileID: 0}
-    desc: 
+  datas: []
 --- !u!1 &1447956145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,7 +4293,7 @@ PrefabInstance:
     - target: {fileID: 1349395701412886952, guid: ab578b69424e65d42ba95a649d058fc9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1349395701412886952, guid: ab578b69424e65d42ba95a649d058fc9,
         type: 3}
@@ -4663,7 +4671,7 @@ PrefabInstance:
     - target: {fileID: 131183770480139910, guid: 96a0bfd2f7f9f024fab5986ab2d00a37,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 131183770480139910, guid: 96a0bfd2f7f9f024fab5986ab2d00a37,
         type: 3}

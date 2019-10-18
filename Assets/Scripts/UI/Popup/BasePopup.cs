@@ -8,6 +8,11 @@ using System.Collections;
 public class BasePopup : MonoBehaviour
 {
     public PopupType popupType=PopupType.Base;
+    /// <summary>
+    /// 弹窗优先级，如果有多个弹窗同事出现，越大的数在越前面
+    /// </summary>
+    public int Priority;
+
 
     public virtual void Awake()
     {
@@ -31,7 +36,11 @@ public class BasePopup : MonoBehaviour
 
     }
 
-    public virtual void Enter()
+    /// <summary>
+    /// 进入弹窗，并传入/更新弹窗信息
+    /// </summary>
+    /// <param name="_data"></param>
+    public virtual void Enter(object _data=null)
     {
         gameObject.SetActive(true);
     }
