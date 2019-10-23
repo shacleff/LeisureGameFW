@@ -12,7 +12,7 @@ public interface IObjectPool
     int MaxCount { set; get; }
     int PreCount { set; get; }
     int SpawnCount { set; get; }
-    object Spawn();
+    GameObject Spawn();
     void UnSpawn(GameObject _obj);
     void Release();
     void ReleaseAll();

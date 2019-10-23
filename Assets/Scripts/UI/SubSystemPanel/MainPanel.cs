@@ -6,8 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Events;
 
-public class MainPanel : MonoBehaviour
+public class MainPanel : MonoBehaviour,IPanel
 {
+
+    #region menu buttons
     [HideInInspector]
     public GameObject startBtn, achievementBtn, missionBtn, settingBtn, shopBtn, bagBtn, rankBtn, giftBtn, levelBtn;
 
@@ -29,6 +31,8 @@ public class MainPanel : MonoBehaviour
     public bool giftBtnSwitch = true;
     [HideInInspector]
     public bool levelBtnSwitch = true;
+
+    #endregion
 
     public Text coinText;
     public Text gemText;
@@ -152,6 +156,21 @@ public class MainPanel : MonoBehaviour
             GuideSystem.GetInstance().maskFocus.Deactivate();
         }
 
+    }
+
+    public void Open(object _userData = null)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Hide()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Close()
+    {
+        throw new NotImplementedException();
     }
 }
 

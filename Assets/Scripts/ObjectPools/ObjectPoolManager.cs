@@ -37,7 +37,23 @@ public class ObjectPoolManager:MonoSingleton<ObjectPoolManager>
         PoolDict.Add(op.Name, op);
     }
 
-    
+    public GameObject Spawn(string _objName)
+    {
+        ObjectPool pool = null;
+        if(PoolDict.TryGetValue(_objName,out pool))
+        {
+            return pool.Spawn();
+        }
+        return null;
+    }
 
+    public void UnSpawn(GameObject _obj)
+    {
+        ObjectPool pool = null;
+        if (PoolDict.TryGetValue(_obj.name, out pool))
+        {
+            pool.UnSpawn(_obj);
+        }
+    }
 
 }

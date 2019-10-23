@@ -113,7 +113,7 @@ public class ObjectPool : IObjectPool
         return _obj;
     }
 
-    public object Spawn()
+    public GameObject Spawn()
     {
         if(SpawnCount>=MaxCount) Debug.LogError("The Object Pool Count is 0");
         if(SpawnCount>=PreCount-1)

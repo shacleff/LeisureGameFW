@@ -94,7 +94,7 @@ public class AdManager : MonoSingleton<AdManager>
     {
         if (Application.platform == RuntimePlatform.Android)
         {
-            if (ASCSDKInterface.Instance.GetIntersFlag())
+            if (IsInterFlag)
             {
                 Log("show inter success...");
                 ASCSDKInterface.Instance.ShowInters();
